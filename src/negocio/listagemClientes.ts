@@ -17,7 +17,11 @@ export default class ListagemClientes extends Listagem {
                 console.log(`Rgs:`);
                 cliente.getRgs.forEach((e) => {console.log(` • ${e.getValor}`)}
                 )
-                
+            }
+            if (cliente.getTelefones.length !== 0) {
+                console.log(`Telefones:`);
+                cliente.getTelefones.forEach((e) => {console.log(` • (${e.getDdd}) ${e.getNumero}`)}
+                )
             }
             console.log(`--------------------------------------`);
         });
