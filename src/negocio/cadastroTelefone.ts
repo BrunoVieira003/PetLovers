@@ -20,11 +20,11 @@ export default class CadastroTelefone extends Cadastro {
         console.log(`\nAdicionar novo telefone para o cliente`);
         let cliente;
         while (cliente === undefined) {
-            let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
+            let cpf = this.entrada.receberTexto(`Por favor informe o cpf do cliente: `)
             
-            cliente = this.clientes.find(e => e.nome === nome)
+            cliente = this.clientes.find(e => e.getCpf.getValor === cpf)
             
-            if (!cliente) console.log(`Cliente '${nome}' não encontrado. Tente novamente\n`);
+            if (!cliente) console.log(`Cliente com cpf: '${cpf}' não encontrado. Tente novamente\n`);
         }
 
             

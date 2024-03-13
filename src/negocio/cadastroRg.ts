@@ -20,11 +20,11 @@ export default class CadastroRg extends Cadastro {
         console.log(`\nAdicionar novo rg para o cliente`);
         let cliente;
         while (cliente === undefined) {
-            let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
-        
-            cliente = this.clientes.find(e => e.nome === nome)
-
-            if (!cliente) console.log(`Cliente '${nome}' não encontrado. Tente novamente\n`);
+            let cpf = this.entrada.receberTexto(`Por favor informe o cpf do cliente: `)
+            
+            cliente = this.clientes.find(e => e.getCpf.getValor === cpf)
+            
+            if (!cliente) console.log(`Cliente com cpf: '${cpf}' não encontrado. Tente novamente\n`);
         }
 
             
