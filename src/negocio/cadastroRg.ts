@@ -22,15 +22,9 @@ export default class CadastroRg extends Cadastro {
         while (cliente === undefined) {
             let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente: `)
         
-            for (let c of this.clientes) {
-                if (c.nome === nome) {
-                    cliente = c
-                    break
-                }
-            }
-            if (cliente === undefined) {
-                console.log(`Cliente '${nome}' não encontrado. Tente novamente\n`);
-            }
+            cliente = this.clientes.find(e => e.nome === nome)
+
+            if (!cliente) console.log(`Cliente '${nome}' não encontrado. Tente novamente\n`);
         }
 
             
