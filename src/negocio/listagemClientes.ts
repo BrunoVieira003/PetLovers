@@ -23,6 +23,11 @@ export default class ListagemClientes extends Listagem {
                 cliente.getTelefones.forEach((e) => {console.log(` • (${e.getDdd}) ${e.getNumero}`)}
                 )
             }
+            if (cliente.getPets.length !== 0) {
+                console.log(`Pets:`);
+                cliente.getPets.forEach((e) => {console.log(` • ${e.getNome} [${e.getRaca}]`)}
+                )
+            }
             console.log(`--------------------------------------`);
         });
         console.log(`\n`);
