@@ -11,4 +11,9 @@ export default class Entrada {
         let texto = prompt(mensagem)
         return texto
     }
+
+    public confirmar(mensagem : string): boolean{
+        let prompt = promptSync()
+        return prompt(`${mensagem} (S/N) `).toLowerCase() === 's'
+    }
 }

@@ -4,11 +4,12 @@ import CadastroCliente from "../negocio/cadastroCliente";
 import CadastroPet from "../negocio/cadastroPet";
 import CadastroRg from "../negocio/cadastroRg";
 import CadastroTelefone from "../negocio/cadastroTelefone";
+import ExcluirCliente from "../negocio/excluirCliente";
 import ListagemClientes from "../negocio/listagemClientes";
 import ListagemPets from "../negocio/listagemPets";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
-let empresa = new Empresa()
+var empresa = new Empresa()
 let execucao = true
 
 while (execucao) {
@@ -19,6 +20,7 @@ while (execucao) {
     console.log(`4 - Adicionar novo telefone para cliente`);
     console.log(`5 - Adicionar novo Pet para cliente`);
     console.log(`6 - Listar todos os Pets`);
+    console.log(`7 - Excluir cliente`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -49,6 +51,10 @@ while (execucao) {
             let listagemPets = new ListagemPets(empresa.getClientes)
             listagemPets.listar()
             break;
+        case 7:
+            let excluirCliente = new ExcluirCliente(empresa.getClientes)
+            excluirCliente.excluir()
+            break;
         case 0:
             execucao = false
             console.log(`Até mais`)
@@ -57,3 +63,5 @@ while (execucao) {
             console.log(`Operação não entendida :(`)
     }
 }
+
+export {empresa}

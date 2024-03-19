@@ -14,6 +14,11 @@ export default class Empresa{
     public get getClientes(){
         return this.clientes
     }
+
+    public set setClientes(clientes: Array<Cliente>){
+        this.clientes = clientes
+    }
+
     public get getProdutos(){
         return this.produtos
     }
