@@ -1,5 +1,6 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
+import AtualizarCliente from "../negocio/atualizarCliente";
 import CadastroCliente from "../negocio/cadastroCliente";
 import CadastroPet from "../negocio/cadastroPet";
 import CadastroRg from "../negocio/cadastroRg";
@@ -20,7 +21,8 @@ while (execucao) {
     console.log(`4 - Adicionar novo telefone para cliente`);
     console.log(`5 - Adicionar novo Pet para cliente`);
     console.log(`6 - Listar todos os Pets`);
-    console.log(`7 - Excluir cliente`);
+    console.log(`7 - Atualizar cliente`);
+    console.log(`8 - Excluir cliente`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -52,6 +54,10 @@ while (execucao) {
             listagemPets.listar()
             break;
         case 7:
+            let atualizarCliente = new AtualizarCliente(empresa.getClientes)
+            atualizarCliente.atualizar()
+            break;
+        case 8:
             let excluirCliente = new ExcluirCliente(empresa.getClientes)
             excluirCliente.excluir()
             break;
