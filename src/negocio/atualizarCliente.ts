@@ -34,9 +34,9 @@ export default class AtualizarCliente {
             console.log(`\nOpções:`);
             console.log(`1 - Nome`);
             console.log(`2 - Nome social`);
-            console.log(`0 - Sair`);
+            console.log(`\n0 - Voltar`);
     
-            let opcao = entrada.receberNumero('Escolha a informação que deseja alterar: ');
+            let opcao = entrada.escolherNumero('Escolha a informação que deseja alterar: ', 0, 2);
             switch (opcao) {
                 case 1:
                     let nome = entrada.receberTexto('Digite um novo nome para o cliente: ')
