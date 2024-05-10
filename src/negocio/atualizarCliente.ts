@@ -34,9 +34,11 @@ export default class AtualizarCliente {
             console.log(`\nOpções:`);
             console.log(`1 - Nome`);
             console.log(`2 - Nome social`);
+            console.log(`3 - CPF`);
+            console.log(`4 - Data de emissão do CPF`);
             console.log(`\n0 - Voltar`);
     
-            let opcao = entrada.escolherNumero('Escolha a informação que deseja alterar: ', 0, 2);
+            let opcao = entrada.escolherNumero('Escolha a informação que deseja alterar: ', 0, 4);
             switch (opcao) {
                 case 1:
                     let nome = entrada.receberTexto('Digite um novo nome para o cliente: ')
@@ -46,6 +48,16 @@ export default class AtualizarCliente {
                 case 2:
                     let nomeSocial = entrada.receberTexto('Digite um novo nome social para o cliente: ')
                     cliente.nomeSocial = nomeSocial
+                    console.log('\nInformação alterada com sucesso');
+                    break;
+                case 3:
+                    let cpf = entrada.receberTexto('Digite o número do cpf do cliente: ')
+                    cliente.setCpf = new CPF(cpf, cliente.getCpf.getDataEmissao)
+                    console.log('\nInformação alterada com sucesso');
+                    break;
+                case 4:
+                    let dataEmissao = entrada.receberData('Digite a data de emissão do cpf do cliente')
+                    cliente.setCpf = new CPF(cliente.getCpf.getValor, dataEmissao)
                     console.log('\nInformação alterada com sucesso');
                     break;
                     

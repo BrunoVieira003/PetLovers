@@ -29,6 +29,9 @@ export default class Cliente {
     public get getCpf(): CPF {
         return this.cpf
     }
+    public set setCpf(value: CPF){
+        this.cpf = value
+    }
     public get getRgs(): Array<RG> {
         return this.rgs
     }
