@@ -47,4 +47,7 @@ export default class Cliente {
     public get getPets(): Array<Pet>{
         return this.pets
     }
+    public set setPets(value: Array<Pet>){
+        this.pets = value
+    }
 }

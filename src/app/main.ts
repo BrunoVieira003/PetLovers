@@ -7,6 +7,7 @@ import CadastroPet from "../negocio/cadastroPet";
 import CadastroRg from "../negocio/cadastroRg";
 import CadastroTelefone from "../negocio/cadastroTelefone";
 import ExcluirCliente from "../negocio/excluirCliente";
+import ExcluirPet from "../negocio/excluirPet";
 import ListagemClientes from "../negocio/listagemClientes";
 import ListagemPets from "../negocio/listagemPets";
 
@@ -25,6 +26,7 @@ while (execucao) {
     console.log(`7 - Atualizar cliente`);
     console.log(`8 - Excluir cliente`);
     console.log(`9 - Atualizar pets`);
+    console.log(`10 - Excluir pet`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -66,6 +68,10 @@ while (execucao) {
         case 9:
             let atualizarPet = new AtualizarPet(empresa.getClientes)
             atualizarPet.atualizar()
+            break
+        case 10:
+            let excluirPet = new ExcluirPet(empresa.getClientes)
+            excluirPet.atualizar()
             break
         case 0:
             execucao = false
