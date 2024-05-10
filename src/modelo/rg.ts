@@ -11,4 +11,8 @@ export default class RG {
     public get getDataEmissao(): Date {
         return this.dataEmissao
     }
+
+    public get dataEmissaoFormatada(): string{
+        return `${this.dataEmissao.getDate()}/${this.dataEmissao.getMonth()}/${this.dataEmissao.getFullYear()}`
+    }
 }
