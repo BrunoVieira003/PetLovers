@@ -52,8 +52,14 @@ export default class AtualizarCliente {
                     break;
                 case 3:
                     let cpf = entrada.receberTexto('Digite o número do cpf do cliente: ')
-                    cliente.setCpf = new CPF(cpf, cliente.getCpf.getDataEmissao)
-                    console.log('\nInformação alterada com sucesso');
+                    let outroCliente = this.clientes.find(e => e.getCpf.getValor === cpf)
+            
+                    if (outroCliente){
+                        console.log(`\nCliente ${outroCliente.nome} já possui o cpf ${cpf}`);
+                    }else{
+                        cliente.setCpf = new CPF(cpf, cliente.getCpf.getDataEmissao)
+                        console.log('\nInformação alterada com sucesso');
+                    }
                     break;
                 case 4:
                     let dataEmissao = entrada.receberData('Digite a data de emissão do cpf do cliente')
