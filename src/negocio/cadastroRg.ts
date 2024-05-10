@@ -30,13 +30,7 @@ export default class CadastroRg extends Cadastro {
             
             
         let valor = this.entrada.receberTexto(`Por favor informe o número do rg: `);
-        let data = this.entrada.receberTexto(`Por favor informe a data de emissão do rg, no padrão dd/mm/yyyy: `);
-
-        let partesData = data.split('/')
-        let ano = new Number(partesData[2].valueOf()).valueOf()
-        let mes = new Number(partesData[1].valueOf()).valueOf()
-        let dia = new Number(partesData[0].valueOf()).valueOf()
-        let dataEmissao = new Date(ano, mes, dia)
+        let dataEmissao = this.entrada.receberData(`Por favor informe a data de emissão do rg`);
         let rg = new RG(valor, dataEmissao);
 
         cliente.getRgs.push(rg)
