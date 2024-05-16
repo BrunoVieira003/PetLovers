@@ -6,12 +6,14 @@ import CadastroCliente from "../negocio/cadastroCliente";
 import CadastroPet from "../negocio/cadastroPet";
 import CadastroProduto from "../negocio/cadastroProduto";
 import CadastroRg from "../negocio/cadastroRg";
+import CadastroServico from "../negocio/cadastroServico";
 import CadastroTelefone from "../negocio/cadastroTelefone";
 import ExcluirCliente from "../negocio/excluirCliente";
 import ExcluirPet from "../negocio/excluirPet";
 import ListagemClientes from "../negocio/listagemClientes";
 import ListagemPets from "../negocio/listagemPets";
 import ListagemProdutos from "../negocio/listagemProdutos";
+import ListagemServicos from "../negocio/listagemServicos";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 var empresa = new Empresa()
@@ -31,6 +33,8 @@ while (execucao) {
     console.log(`10 - Excluir pet`);
     console.log(`11 - Listar produtos`);
     console.log(`12 - Adicionar novo produto`);
+    console.log(`13 - Listar serviços`);
+    console.log(`14 - Adicionar novo serviço`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -84,6 +88,14 @@ while (execucao) {
         case 12:
             let cadastroProduto = new CadastroProduto(empresa.getProdutos)
             cadastroProduto.cadastrar()
+            break
+        case 13:
+            let listagemServicos = new ListagemServicos(empresa.getServicos)
+            listagemServicos.listar()
+            break;
+        case 14:
+            let cadastroServico = new CadastroServico(empresa.getServicos)
+            cadastroServico.cadastrar()
             break
         case 0:
             execucao = false
