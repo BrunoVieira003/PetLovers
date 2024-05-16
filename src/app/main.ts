@@ -17,6 +17,7 @@ import ListagemServicos from "../negocio/listagemServicos";
 import ClienteMenu from "../submenus/ClienteMenu";
 import PetMenu from "../submenus/PetMenu";
 
+console.clear()
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 var empresa = new Empresa()
 let execucao = true
@@ -29,7 +30,7 @@ while (execucao) {
     console.log(`12 - Adicionar novo produto`);
     console.log(`13 - Listar serviços`);
     console.log(`14 - Adicionar novo serviço`);
-    console.log(`0 - Sair`);
+    console.log(`\n0 - Sair`);
 
     let entrada = new Entrada()
     let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)

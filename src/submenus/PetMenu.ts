@@ -34,7 +34,10 @@ class PetMenu extends Submenu{
             console.log("\n0 - Voltar")
 
             opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 6)
-            if(opcao === 0) break
+            if(opcao === 0) {
+                console.clear()
+                break
+            }
 
             switch(opcao){
                 case 1:
