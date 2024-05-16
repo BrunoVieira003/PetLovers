@@ -12,7 +12,7 @@ export default class ExcluirPet {
         this.clientes = clientes
         this.entrada = new Entrada()
     }
-    public atualizar(): void {
+    public excluir(): void {
         if (this.clientes.length === 0){
             console.log(`\nAinda não há clientes cadastrados!\n`);
             return

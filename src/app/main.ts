@@ -15,6 +15,7 @@ import ListagemPets from "../negocio/listagemPets";
 import ListagemProdutos from "../negocio/listagemProdutos";
 import ListagemServicos from "../negocio/listagemServicos";
 import ClienteMenu from "../submenus/ClienteMenu";
+import PetMenu from "../submenus/PetMenu";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 var empresa = new Empresa()
@@ -23,12 +24,7 @@ let execucao = true
 while (execucao) {
     console.log(`Opções:`);
     console.log('1 - Clientes')
-    console.log(`5 - Adicionar novo Pet para cliente`);
-    console.log(`6 - Listar todos os Pets`);
-    console.log(`7 - Atualizar cliente`);
-    console.log(`8 - Excluir cliente`);
-    console.log(`9 - Atualizar pets`);
-    console.log(`10 - Excluir pet`);
+    console.log('2 - Pets')
     console.log(`11 - Listar produtos`);
     console.log(`12 - Adicionar novo produto`);
     console.log(`13 - Listar serviços`);
@@ -43,30 +39,10 @@ while (execucao) {
             let clienteMenu = new ClienteMenu(empresa)
             clienteMenu.open()
             break;
-        case 5:
-            let cadastroPet = new CadastroPet(empresa.getClientes)
-            cadastroPet.cadastrar()
+        case 2:
+            let petMenu = new PetMenu(empresa)
+            petMenu.open()
             break;
-        case 6:
-            let listagemPets = new ListagemPets(empresa.getClientes)
-            listagemPets.listar()
-            break;
-        case 7:
-            let atualizarCliente = new AtualizarCliente(empresa.getClientes)
-            atualizarCliente.atualizar()
-            break;
-        case 8:
-            let excluirCliente = new ExcluirCliente(empresa.getClientes)
-            excluirCliente.excluir()
-            break;
-        case 9:
-            let atualizarPet = new AtualizarPet(empresa.getClientes)
-            atualizarPet.atualizar()
-            break
-        case 10:
-            let excluirPet = new ExcluirPet(empresa.getClientes)
-            excluirPet.atualizar()
-            break
         case 11:
             let listagemProdutos = new ListagemProdutos(empresa.getProdutos)
             listagemProdutos.listar()
