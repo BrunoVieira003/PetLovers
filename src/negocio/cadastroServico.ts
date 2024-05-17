@@ -1,7 +1,4 @@
 import Entrada from "../io/entrada"
-import Cliente from "../modelo/cliente"
-import Pet from "../modelo/pet"
-import Produto from "../modelo/produto"
 import Servico from "../modelo/servico"
 import Cadastro from "./cadastro"
 
@@ -16,8 +13,10 @@ export default class CadastroServico extends Cadastro {
     
     public cadastrar(): void {
         let nome = this.entrada.receberTexto("Digite o nome do novo serviço: ")
+        let valor = this.entrada.receberNumero("Digite o valor do novo serviço: ")
         const novoServico = new Servico()
         novoServico.nome = nome
+        novoServico.valor = valor
 
         this.servicos.push(novoServico)
 

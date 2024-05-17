@@ -1,9 +1,5 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
-import CadastroProduto from "../negocio/cadastroProduto";
-import CadastroServico from "../negocio/cadastroServico";
-import ListagemProdutos from "../negocio/listagemProdutos";
-import ListagemServicos from "../negocio/listagemServicos";
 import ClienteMenu from "../submenus/ClienteMenu";
 import PetMenu from "../submenus/PetMenu";
 import ProdutoMenu from "../submenus/ProdutoMenu";
@@ -37,9 +33,11 @@ while (execucao) {
         case 3:
             let produtoMenu = new ProdutoMenu(empresa)
             produtoMenu.open()
+            break
         case 4:
             let servicoMenu = new ServicoMenu(empresa)
             servicoMenu.open()
+            break
         case 0:
             execucao = false
             console.log(`Até mais`)

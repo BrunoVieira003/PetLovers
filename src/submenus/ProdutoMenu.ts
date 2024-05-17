@@ -21,7 +21,7 @@ class ProdutoMenu extends Submenu{
             console.log(`2 - Cadastrar produto`);
             console.log("\n0 - Voltar")
 
-            opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 6)
+            opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 3)
             if(opcao === 0) {
                 console.clear()
                 break
@@ -29,11 +29,11 @@ class ProdutoMenu extends Submenu{
 
             switch(opcao){
                 case 1:
-                    let listagem = new ListagemProdutos(this.empresa.getClientes)
+                    let listagem = new ListagemProdutos(this.empresa.getProdutos)
                     listagem.listar()
                     break
                 case 2:
-                    let cadastro = new CadastroProduto(this.empresa.getClientes)
+                    let cadastro = new CadastroProduto(this.empresa.getProdutos)
                     cadastro.cadastrar()
                     break
             }

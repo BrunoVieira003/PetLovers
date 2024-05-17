@@ -1,9 +1,10 @@
-import Produto from "../modelo/produto";
+import saida from "../io/saida";
+import Servico from "../modelo/servico";
 import Listagem from "./listagem";
 
 export default class ListagemServicos extends Listagem {
-    private servicos: Array<Produto>
-    constructor(servicos: Array<Produto>) {
+    private servicos: Array<Servico>
+    constructor(servicos: Array<Servico>) {
         super()
         this.servicos = servicos
     }
@@ -14,7 +15,7 @@ export default class ListagemServicos extends Listagem {
         }
         console.log(`\nLista de serviços:`);
         this.servicos.forEach(servico => {
-            console.log(servico.nome);
+            console.log(` • ${servico.nome} - ${saida.formatCurrency(servico.valor)}`);
         })
 
         console.log(`--------------------------------------`);
