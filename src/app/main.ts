@@ -7,6 +7,7 @@ import ListagemServicos from "../negocio/listagemServicos";
 import ClienteMenu from "../submenus/ClienteMenu";
 import PetMenu from "../submenus/PetMenu";
 import ProdutoMenu from "../submenus/ProdutoMenu";
+import ServicoMenu from "../submenus/ServicoMenu";
 
 console.clear()
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
@@ -18,8 +19,7 @@ while (execucao) {
     console.log('1 - Clientes')
     console.log('2 - Pets')
     console.log(`3 - Produtos`);
-    console.log(`13 - Listar serviços`);
-    console.log(`14 - Adicionar novo serviço`);
+    console.log(`4 - Serviços`);
     console.log(`\n0 - Sair`);
 
     let entrada = new Entrada()
@@ -37,14 +37,9 @@ while (execucao) {
         case 3:
             let produtoMenu = new ProdutoMenu(empresa)
             produtoMenu.open()
-        case 13:
-            let listagemServicos = new ListagemServicos(empresa.getServicos)
-            listagemServicos.listar()
-            break;
-        case 14:
-            let cadastroServico = new CadastroServico(empresa.getServicos)
-            cadastroServico.cadastrar()
-            break
+        case 4:
+            let servicoMenu = new ServicoMenu(empresa)
+            servicoMenu.open()
         case 0:
             execucao = false
             console.log(`Até mais`)
