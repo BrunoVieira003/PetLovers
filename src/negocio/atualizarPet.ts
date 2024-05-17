@@ -1,9 +1,5 @@
 import Cliente from "../modelo/cliente"
 import Entrada from "../io/entrada"
-import CPF from "../modelo/cpf"
-import Empresa from "../modelo/empresa"
-import { empresa } from "../app/main"
-import entrada from "../io/entrada"
 
 export default class AtualizarPet {
     private clientes: Array<Cliente>
