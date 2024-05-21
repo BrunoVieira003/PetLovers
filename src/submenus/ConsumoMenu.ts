@@ -1,14 +1,9 @@
 import Entrada from '../io/entrada';
-import Cliente from '../modelo/cliente';
 import Empresa from '../modelo/empresa';
-import AtualizarCliente from '../negocio/atualizarCliente';
-import CadastroCliente from '../negocio/cadastroCliente';
 import CadastroProdutosConsumidos from '../negocio/cadastroProdutoConsumido';
-import CadastroRg from '../negocio/cadastroRg';
-import CadastroTelefone from '../negocio/cadastroTelefone';
-import ExcluirCliente from '../negocio/excluirCliente';
-import ListagemClientes from '../negocio/listagemClientes';
+import CadastroServicosConsumidos from '../negocio/cadastroServicoConsumido';
 import ListagemProdutosConsumidos from '../negocio/listagemProdutosConsumidos';
+import ListagemServicosConsumidos from '../negocio/listagemServicosConsumidos';
 import Submenu from './submenu'
 
 class ConsumoMenu extends Submenu{
@@ -24,8 +19,10 @@ class ConsumoMenu extends Submenu{
         console.clear()
         while(true){
             console.log('--------------- Consumo ---------------')
-            console.log(`1 - Listar produtos consumidos por um cliente`);
+            console.log(`1 - Produtos consumidos por um cliente`);
             console.log(`2 - Registrar compra de produto`);
+            console.log(`3 - Serviços contratados por um cliente`);
+            console.log(`4 - Registrar contratação de serviços`);
             console.log("\n0 - Voltar")
 
             opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 6)
@@ -43,7 +40,15 @@ class ConsumoMenu extends Submenu{
                     let registroProdutos = new CadastroProdutosConsumidos(this.empresa.getClientes, this.empresa.getProdutos)
                     registroProdutos.cadastrar()
                     break
-            }
+                case 3:
+                    let listagemServicos = new ListagemServicosConsumidos(this.empresa.getClientes)
+                    listagemServicos.listar()
+                    break
+                case 4:
+                    let registroServicos = new CadastroServicosConsumidos(this.empresa.getClientes, this.empresa.getServicos)
+                    registroServicos.cadastrar()
+                    break
+        }
             
         }
     }

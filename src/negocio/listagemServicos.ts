@@ -17,8 +17,6 @@ export default class ListagemServicos extends Listagem {
         this.servicos.forEach(servico => {
             console.log(` • ${servico.nome} - ${saida.formatCurrency(servico.valor)}`);
         })
-
-        console.log(`--------------------------------------`);
         console.log(`\n`);
     }
 }
