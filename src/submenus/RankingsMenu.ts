@@ -4,6 +4,7 @@ import CadastroProdutosConsumidos from '../negocio/cadastroProdutoConsumido';
 import CadastroServicosConsumidos from '../negocio/cadastroServicoConsumido';
 import ListagemProdutosConsumidos from '../negocio/listagemProdutosConsumidos';
 import ListagemServicosConsumidos from '../negocio/listagemServicosConsumidos';
+import RankingClientesPorProduto from '../negocio/rankingClientePorProduto';
 import RankingClientesPorServico from '../negocio/rankingClientePorServico';
 import Submenu from './submenu'
 
@@ -21,6 +22,7 @@ class RankingMenu extends Submenu{
         while(true){
             console.log('--------------- Rankings ---------------')
             console.log(`1 - Clientes que mais contrataram serviços`);
+            console.log(`2 - Clientes que mais compraram produtos`);
             console.log("\n0 - Voltar")
 
             opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 5)
@@ -31,7 +33,11 @@ class RankingMenu extends Submenu{
 
             switch(opcao){
                 case 1:
-                    let listagemProdutos = new RankingClientesPorServico(this.empresa.getClientes)
+                    let listagemServicos = new RankingClientesPorServico(this.empresa.getClientes)
+                    listagemServicos.listar()
+                    break
+                case 2:
+                    let listagemProdutos = new RankingClientesPorProduto(this.empresa.getClientes)
                     listagemProdutos.listar()
                     break
         }
