@@ -4,6 +4,7 @@ import ClienteMenu from "../submenus/ClienteMenu";
 import ConsumoMenu from "../submenus/ConsumoMenu";
 import PetMenu from "../submenus/PetMenu";
 import ProdutoMenu from "../submenus/ProdutoMenu";
+import RankingMenu from "../submenus/RankingsMenu";
 import ServicoMenu from "../submenus/ServicoMenu";
 
 console.clear()
@@ -18,6 +19,7 @@ while (execucao) {
     console.log(`3 - Produtos`);
     console.log(`4 - Serviços`);
     console.log(`5 - Consumo`);
+    console.log(`6 - Ranking`);
     console.log(`\n0 - Sair`);
 
     let entrada = new Entrada()
@@ -43,6 +45,10 @@ while (execucao) {
         case 5:
             let consumoMenu = new ConsumoMenu(empresa)
             consumoMenu.open()
+            break
+        case 6:
+            let rankingMenu = new RankingMenu(empresa)
+            rankingMenu.open()
             break
         case 0:
             execucao = false

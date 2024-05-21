@@ -33,7 +33,7 @@ class PetMenu extends Submenu{
             console.log(`4 - Excluir pet`);
             console.log("\n0 - Voltar")
 
-            opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 6)
+            opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 4)
             if(opcao === 0) {
                 console.clear()
                 break

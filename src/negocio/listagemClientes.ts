@@ -26,7 +26,7 @@ export default class ListagemClientes extends Listagem {
                 console.log(`Telefones:`);
                 cliente.getTelefones.forEach((e) => {console.log(` • (${e.getDdd}) ${e.getNumero}`)})
             }
+            console.log('\n')
         });
-        console.log(`\n`);
     }
 }

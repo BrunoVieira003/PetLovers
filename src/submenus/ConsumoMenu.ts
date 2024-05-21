@@ -25,7 +25,7 @@ class ConsumoMenu extends Submenu{
             console.log(`4 - Registrar contratação de serviços`);
             console.log("\n0 - Voltar")
 
-            opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 6)
+            opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 4)
             if(opcao === 0) {
                 console.clear()
                 break
