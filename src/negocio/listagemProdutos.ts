@@ -17,8 +17,6 @@ export default class ListagemProdutos extends Listagem {
         this.produtos.forEach(produto => {
             console.log(` • ${produto.nome} - ${saida.formatCurrency(produto.valor)}`);
         })
-
-        console.log(`--------------------------------------`);
         console.log(`\n`);
     }
 }

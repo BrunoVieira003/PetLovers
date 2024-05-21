@@ -1,6 +1,7 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import ClienteMenu from "../submenus/ClienteMenu";
+import ConsumoMenu from "../submenus/ConsumoMenu";
 import PetMenu from "../submenus/PetMenu";
 import ProdutoMenu from "../submenus/ProdutoMenu";
 import ServicoMenu from "../submenus/ServicoMenu";
@@ -16,6 +17,7 @@ while (execucao) {
     console.log('2 - Pets')
     console.log(`3 - Produtos`);
     console.log(`4 - Serviços`);
+    console.log(`5 - Consumo`);
     console.log(`\n0 - Sair`);
 
     let entrada = new Entrada()
@@ -37,6 +39,10 @@ while (execucao) {
         case 4:
             let servicoMenu = new ServicoMenu(empresa)
             servicoMenu.open()
+            break
+        case 5:
+            let consumoMenu = new ConsumoMenu(empresa)
+            consumoMenu.open()
             break
         case 0:
             execucao = false

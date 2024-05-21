@@ -24,11 +24,8 @@ export default class ListagemClientes extends Listagem {
             }
             if (cliente.getTelefones.length !== 0) {
                 console.log(`Telefones:`);
-                cliente.getTelefones.forEach((e) => {console.log(` • (${e.getDdd}) ${e.getNumero}`)}
-                )
-                console.log(`--------------------------------------`);
+                cliente.getTelefones.forEach((e) => {console.log(` • (${e.getDdd}) ${e.getNumero}`)})
             }
-            console.log(`\n`);
         });
         console.log(`\n`);
     }

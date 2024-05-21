@@ -47,6 +47,12 @@ export default class Cliente {
     public get getServicosConsumidos(): Array<Servico> {
         return this.servicosConsumidos
     }
+    public set setProdutosConsumidos(produtos: Array<Produto>) {
+        this.produtosConsumidos = produtos
+    }
+    public set setServicosConsumidos(servicos: Array<Servico>) {
+        this.servicosConsumidos = servicos
+    }
     public get getPets(): Array<Pet>{
         return this.pets
     }
