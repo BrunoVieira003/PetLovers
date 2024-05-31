@@ -13,7 +13,7 @@ export default class ListagemPets extends Listagem {
             if (cliente.getPets.length !== 0) {
                 console.log(cliente.nome);
                 cliente.getPets.forEach(pet => {
-                    console.log(`• ${pet.getNome}`);
+                    console.log(`• [${pet.getGenero}]${pet.getNome} - ${pet.getTipo}(${pet.getRaca})`);
                 })
             }
             console.log(`--------------------------------------`);
