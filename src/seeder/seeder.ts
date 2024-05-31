@@ -1,6 +1,7 @@
 import Cliente from "../modelo/cliente";
 import CPF from "../modelo/cpf";
 import Pet from "../modelo/pet";
+import Produto from "../modelo/produto";
 import RG from "../modelo/rg";
 import Telefone from "../modelo/telefone";
 import Random from "../util/random"
@@ -36,5 +37,30 @@ export default class Seeder{
         })
 
         return clientes
-    } 
+    }
+
+    public static gerarProdutos() : Array<Produto>{
+        let produtoNomes = [
+            "Ração",
+            "Brinquedo",
+            "Caminha",
+            "Coleira",
+            "Caixa de Areia",
+            "Shampoo",
+            "Comedouro",
+            "Bebedouro",
+            "Escova de Pelos",
+            "Tapete Higiênico"
+        ]
+
+        let produtos: Array<Produto> = []
+        produtoNomes.forEach((nomeP) => {
+            let novoProduto = new Produto()
+            novoProduto.nome = nomeP
+            novoProduto.valor = Random.gerarNumero(10, 200)
+            produtos.push(novoProduto)
+        })
+
+        return produtos
+    }
 }

@@ -13,6 +13,7 @@ console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínic
 var empresa = new Empresa()
 
 empresa.setClientes = Seeder.gerarClientes()
+empresa.setProdutos = Seeder.gerarProdutos()
 
 let execucao = true
 
