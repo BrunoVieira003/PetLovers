@@ -1,5 +1,6 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
+import Seeder from "../seeder/seeder";
 import ClienteMenu from "../submenus/ClienteMenu";
 import ConsumoMenu from "../submenus/ConsumoMenu";
 import PetMenu from "../submenus/PetMenu";
@@ -10,6 +11,9 @@ import ServicoMenu from "../submenus/ServicoMenu";
 console.clear()
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 var empresa = new Empresa()
+
+empresa.setClientes = Seeder.gerarClientes()
+
 let execucao = true
 
 while (execucao) {
