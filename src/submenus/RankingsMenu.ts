@@ -3,6 +3,7 @@ import Empresa from '../modelo/empresa';
 import RankingClientesPorProduto from '../negocio/rankingClientePorProduto';
 import RankingClientesPorServico from '../negocio/rankingClientePorServico';
 import RankingProdutosConsumidos from '../negocio/rankingProdutosConsumidos';
+import RankingServicosConsumidos from '../negocio/rankingServicosConsumidos';
 import Submenu from './submenu'
 
 class RankingMenu extends Submenu{
@@ -21,6 +22,7 @@ class RankingMenu extends Submenu{
             console.log(`1 - Clientes que mais contrataram serviços`);
             console.log(`2 - Clientes que mais compraram produtos`);
             console.log(`3 - Produtos mais consumidos`);
+            console.log(`4 - Serviços mais consumidos`);
             console.log("\n0 - Voltar")
 
             opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 5)
@@ -41,6 +43,10 @@ class RankingMenu extends Submenu{
                 case 3:
                     let produtosConsumidos = new RankingProdutosConsumidos(this.empresa.getClientes)
                     produtosConsumidos.listar()
+                    break
+                case 4:
+                    let servicosConsumidos = new RankingServicosConsumidos(this.empresa.getClientes)
+                    servicosConsumidos.listar()
                     break
         }
             
