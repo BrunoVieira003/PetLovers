@@ -14,6 +14,7 @@ var empresa = new Empresa()
 
 empresa.setClientes = Seeder.gerarClientes()
 empresa.setProdutos = Seeder.gerarProdutos()
+empresa.setServicos = Seeder.gerarServicos()
 
 let execucao = true
 

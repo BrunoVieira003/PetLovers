@@ -3,6 +3,7 @@ import CPF from "../modelo/cpf";
 import Pet from "../modelo/pet";
 import Produto from "../modelo/produto";
 import RG from "../modelo/rg";
+import Servico from "../modelo/servico";
 import Telefone from "../modelo/telefone";
 import Random from "../util/random"
 
@@ -62,5 +63,30 @@ export default class Seeder{
         })
 
         return produtos
+    }
+
+    public static gerarServicos() : Array<Servico>{
+        let servicoNomes = [
+            "Banho e Tosa",
+            "Consulta Veterinária",
+            "Vacinação",
+            "Hospedagem",
+            "Adestramento",
+            "Passeio",
+            "Transporte",
+            "Creche",
+            "Tosa Higiênica",
+            "Hidratação de Pelos"
+        ]
+
+        let servicos: Array<Servico> = []
+        servicoNomes.forEach((nomeS) => {
+            let novoServico = new Servico()
+            novoServico.nome = nomeS
+            novoServico.valor = Random.gerarNumero(10, 200)
+            servicos.push(novoServico)
+        })
+
+        return servicos
     }
 }
