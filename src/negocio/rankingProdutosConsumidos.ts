@@ -35,11 +35,9 @@ export default class RankingProdutosConsumidos extends Listagem {
             return
         }
 
-        console.log('--------- Top 10 ---------')
+        console.log('--------- Produtos mais consumidos ---------')
         ordenado.forEach((pro, i) => {
-            if(i+1 <= 10){
-                console.log(`${i+1} - ${pro.produto.nome} (${pro.qtd})`)
-            }
+            console.log(`${i+1} - ${pro.produto.nome} (${pro.qtd})`)
         })
         
         console.log(`\n`);

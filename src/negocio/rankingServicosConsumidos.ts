@@ -35,11 +35,9 @@ export default class RankingServicosConsumidos extends Listagem {
             return
         }
 
-        console.log('--------- Top 10 ---------')
+        console.log('--------- Serviços mais contratados ---------')
         ordenado.forEach((ser, i) => {
-            if(i+1 <= 10){
-                console.log(`${i+1} - ${ser.servico.nome} (${ser.qtd})`)
-            }
+            console.log(`${i+1} - ${ser.servico.nome} (${ser.qtd})`)
         })
         
         console.log(`\n`);
