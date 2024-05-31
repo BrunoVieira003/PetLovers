@@ -1,4 +1,3 @@
-import Entrada from "../io/entrada";
 import Cliente from "../modelo/cliente";
 import Listagem from "./listagem";
 
