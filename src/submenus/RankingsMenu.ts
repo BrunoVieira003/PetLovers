@@ -1,6 +1,7 @@
 import Entrada from '../io/entrada';
 import Empresa from '../modelo/empresa';
 import RankingClientePorConsumo from '../negocio/rankingClientePorConsumo';
+import RankingClientePorValor from '../negocio/rankingClientePorValor';
 import RankingMaisConsumidos from '../negocio/rankingMaisConsumidos';
 import RankingMaisConsumidosPorRaca from '../negocio/rankingMaisConsumidosPorRaca';
 import RankingMaisConsumidosPorTipo from '../negocio/rankingMaisConsumidosPorTipo';
@@ -23,6 +24,7 @@ class RankingMenu extends Submenu{
             console.log(`2 - Produtos ou serviços mais consumidos`);
             console.log(`3 - Produtos ou serviços mais consumidos (por tipo)`);
             console.log(`4 - Produtos ou serviços mais consumidos (por raça)`);
+            console.log(`5 - Clientes que mais consumiram (em valor)`);
             console.log("\n0 - Voltar")
 
             opcao = entrada.escolherNumero("Escolha uma opção: ", 0, 5)
@@ -47,6 +49,10 @@ class RankingMenu extends Submenu{
                 case 4:
                     let produtosConsumidosPorRaca = new RankingMaisConsumidosPorRaca(this.empresa.getVendas)
                     produtosConsumidosPorRaca.listar()
+                    break
+                case 5:
+                    let rankingConsumoPorValor = new RankingClientePorValor(this.empresa.getVendas)
+                    rankingConsumoPorValor.listar()
                     break
         }
             
