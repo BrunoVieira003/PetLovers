@@ -12,9 +12,9 @@ console.clear()
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 var empresa = new Empresa()
 
-empresa.setClientes = Seeder.gerarClientes()
-empresa.setProdutos = Seeder.gerarProdutos()
-empresa.setServicos = Seeder.gerarServicos()
+Seeder.inserirClientes(empresa)
+Seeder.inserirProdutos(empresa)
+Seeder.inserirServicos(empresa)
 
 let execucao = true
 

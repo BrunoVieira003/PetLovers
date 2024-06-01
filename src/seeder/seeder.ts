@@ -1,11 +1,12 @@
 import Cliente from "../modelo/cliente";
 import CPF from "../modelo/cpf";
+import Empresa from "../modelo/empresa";
 import Produto from "../modelo/produto";
 import Servico from "../modelo/servico";
 import Random from "../util/random";
 
 export default class Seeder{
-    public static gerarClientes() : Array<Cliente>{
+    public static inserirClientes(empresa: Empresa){
 
         let nomes = [
             "João",
@@ -34,10 +35,10 @@ export default class Seeder{
 
         })
 
-        return clientes
+        empresa.setClientes = [...empresa.getClientes, ...clientes]
     }
 
-    public static gerarProdutos() : Array<Produto>{
+    public static inserirProdutos(empresa: Empresa){
         let produtoNomes = [
             "Ração",
             "Brinquedo",
@@ -59,10 +60,10 @@ export default class Seeder{
             produtos.push(novoProduto)
         })
 
-        return produtos
+        empresa.setProdutos = [...empresa.getProdutos, ...produtos]
     }
 
-    public static gerarServicos() : Array<Servico>{
+    public static inserirServicos(empresa: Empresa){
         let servicoNomes = [
             "Banho e Tosa",
             "Consulta Veterinária",
@@ -84,6 +85,6 @@ export default class Seeder{
             servicos.push(novoServico)
         })
 
-        return servicos
+        empresa.setServicos = [...empresa.getServicos, ...servicos]
     }
 }
