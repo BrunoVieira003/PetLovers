@@ -4,7 +4,6 @@ import saida from "../io/saida"
 import Cliente from "../modelo/cliente"
 import Empresa from "../modelo/empresa"
 import Produto from "../modelo/produto"
-import RG from "../modelo/rg"
 import Venda from "../modelo/venda"
 import Cadastro from "./cadastro"
 

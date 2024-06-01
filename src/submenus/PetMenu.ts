@@ -1,17 +1,10 @@
 import Entrada from '../io/entrada';
-import Cliente from '../modelo/cliente';
 import Empresa from '../modelo/empresa';
-import AtualizarCliente from '../negocio/atualizarCliente';
 import AtualizarPet from '../negocio/atualizarPet';
-import CadastroCliente from '../negocio/cadastroCliente';
 import CadastroPet from '../negocio/cadastroPet';
-import CadastroRg from '../negocio/cadastroRg';
-import CadastroTelefone from '../negocio/cadastroTelefone';
-import ExcluirCliente from '../negocio/excluirCliente';
 import ExcluirPet from '../negocio/excluirPet';
-import ListagemClientes from '../negocio/listagemClientes';
 import ListagemPets from '../negocio/listagemPets';
-import Submenu from './submenu'
+import Submenu from './submenu';
 
 class PetMenu extends Submenu{
     empresa: Empresa

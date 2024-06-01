@@ -1,5 +1,4 @@
 import Entrada from '../io/entrada';
-import Cliente from '../modelo/cliente';
 import Empresa from '../modelo/empresa';
 import AtualizarCliente from '../negocio/atualizarCliente';
 import CadastroCliente from '../negocio/cadastroCliente';
@@ -7,7 +6,7 @@ import CadastroRg from '../negocio/cadastroRg';
 import CadastroTelefone from '../negocio/cadastroTelefone';
 import ExcluirCliente from '../negocio/excluirCliente';
 import ListagemClientes from '../negocio/listagemClientes';
-import Submenu from './submenu'
+import Submenu from './submenu';
 
 class ClienteMenu extends Submenu{
     empresa: Empresa

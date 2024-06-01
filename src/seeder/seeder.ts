@@ -1,11 +1,8 @@
 import Cliente from "../modelo/cliente";
 import CPF from "../modelo/cpf";
-import Pet from "../modelo/pet";
 import Produto from "../modelo/produto";
-import RG from "../modelo/rg";
 import Servico from "../modelo/servico";
-import Telefone from "../modelo/telefone";
-import Random from "../util/random"
+import Random from "../util/random";
 
 export default class Seeder{
     public static gerarClientes() : Array<Cliente>{

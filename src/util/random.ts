@@ -21,7 +21,7 @@ export default class Random{
     }
 
     public static gerarData(): Date{
-        return new Date(this.gerarNumero(1, 30), this.gerarNumero(1, 12), this.gerarNumero(1980, 2005))
+        return new Date(this.gerarNumero(1980, 2005), this.gerarNumero(0, 11), this.gerarNumero(1, 30))
     }
 
     public static gerarRG(): RG{
