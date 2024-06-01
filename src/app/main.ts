@@ -12,7 +12,8 @@ console.clear()
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 var empresa = new Empresa()
 
-Seeder.inserirDadosAleatorios(empresa)
+// Professor, caso deseje pré-popular a aplicação descomente a linha abaixo:
+// Seeder.inserirDadosAleatorios(empresa)
 
 let execucao = true
 
