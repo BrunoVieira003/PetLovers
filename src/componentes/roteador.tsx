@@ -16,7 +16,7 @@ type TRotas = {
 
 export default class Roteador extends Component<{}, state>{
     private rotas: TRotas
-    private tema = "#e3f2fd"
+    private tema = "#0dcaf0"
 
     constructor(props: {} | Readonly<{}>) {
         super(props)
