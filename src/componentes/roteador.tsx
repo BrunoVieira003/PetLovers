@@ -29,7 +29,6 @@ export default class Roteador extends Component<{}, state>{
             'Pets': <ListaPet tema={this.tema}/>,
             'Produtos': <ListaProduto tema={this.tema}/>,
             'Serviços': <ListaServico tema={this.tema}/>,
-            'Cadastro de cliente': <FormularioCadastroCliente tema={this.tema}/>,
         }
 
         this.selecionarView = this.selecionarView.bind(this)

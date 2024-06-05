@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Component, ReactNode } from "react";
+import FormularioCadastroCliente from "./formularioCadastroCliente";
 
 type props = {
     tema: string
@@ -16,13 +17,14 @@ export default class ListaCliente extends Component<props>{
                     <div className="fw-bold">Cliente {i}</div>
                         cliente0{i}@gmail.com
                     </div>
-                    <span className="badge text-bg-primary rounded-pill">14</span>
                 </li>
             )
         }
 
         return (
             <div className="container-fluid">
+                <button type="button" className="btn btn-primary mb-4 mt-3" data-bs-toggle="modal" data-bs-target="#cadastroCliente">Cadastrar novo cliente</button>
+                <FormularioCadastroCliente tema={tema}/>
                 <div className="list-group">
                     {items}
                 </div>
