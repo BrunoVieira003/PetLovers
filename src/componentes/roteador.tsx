@@ -1,10 +1,10 @@
 import { Component, ReactNode } from "react";
 import BarraNavegacao from "./barraNavegacao";
-import ListaCliente from "./listaClientes";
-import FormularioCadastroCliente from "./formularioCadastroCliente";
-import ListaProduto from "./listaProdutos";
-import ListaServico from "./listaServicos";
-import ListaPet from "./listaPets";
+import ListaCliente from "./clientes/listaClientes";
+import FormularioCadastroCliente from "./clientes/formularioCadastroCliente";
+import ListaProduto from "./produtos/listaProdutos";
+import ListaServico from "./servicos/listaServicos";
+import ListaPet from "./pets/listaPets";
 
 type state = {
     tela: string
