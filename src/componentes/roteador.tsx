@@ -16,6 +16,7 @@ type TRotas = {
 
 export default class Roteador extends Component<{}, state>{
     private rotas: TRotas
+    private tema = "#e3f2fd"
 
     constructor(props: {} | Readonly<{}>) {
         super(props)
@@ -24,10 +25,6 @@ export default class Roteador extends Component<{}, state>{
         }
 
         this.rotas = {
-            'Clientes': <ListaCliente tema="#e3f2fd"/>,
-            'Produtos': <ListaProduto tema="#e3f2fd"/>,
-            'Serviços': <ListaServico tema="#e3f2fd"/>,
-            'Cadastro': <FormularioCadastroCliente tema="#e3f2fd"/>,
             'Clientes': <ListaCliente tema={this.tema}/>,
             'Pets': <ListaPet tema={this.tema}/>,
             'Produtos': <ListaProduto tema={this.tema}/>,
