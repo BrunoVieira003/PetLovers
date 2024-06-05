@@ -2,6 +2,7 @@ import { Component, ReactNode } from "react";
 import BarraNavegacao from "./barraNavegacao";
 import ListaCliente from "./listaClientes";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
+import ListaProduto from "./listaProdutos";
 
 type state = {
     tela: string
@@ -22,7 +23,8 @@ export default class Roteador extends Component<{}, state>{
 
         this.rotas = {
             'Clientes': <ListaCliente tema="#e3f2fd"/>,
-            'Cadastro': <FormularioCadastroCliente tema="#e3f2fd"/>
+            'Produtos': <ListaProduto tema="#e3f2fd"/>,
+            'Cadastro': <FormularioCadastroCliente tema="#e3f2fd"/>,
         }
 
         this.selecionarView = this.selecionarView.bind(this)
