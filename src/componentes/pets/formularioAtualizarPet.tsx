@@ -8,13 +8,13 @@ type props = {
     nome: string
 }
 
-export default class FormularioCadastroPet extends Component<props> {
+export default class FormularioAtualizarPet extends Component<props> {
 
     render() {
         const {tema, id, nome} = this.props
         return (
             <div className="container-fluid">
-                <Modal title="Cadastro de pet" id={`atualizarPet${id}`}>
+                <Modal title="Atualizar pet" id={`atualizarPet${id}`}>
                     <form>
                         <TextInput label="Nome" placeholder="Ex: Double Tó, Café, etc" id="nome" valor={nome}/>
                         <TextInput label="Tipo" placeholder="Ex: Cachorro, Gato, etc" id="tipo" valor="Gato"/>
