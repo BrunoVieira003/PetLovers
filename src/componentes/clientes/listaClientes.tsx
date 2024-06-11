@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Component, ReactNode } from "react";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
+import FormularioAtualizarCliente from "./formularioAtualizarCliente";
 
 type props = {
     tema: string
@@ -11,11 +12,19 @@ export default class ListaCliente extends Component<props>{
         let tema = this.props.tema
         let items: Array<ReactNode> = []
         for(let i = 1; i < 7; i++){
+            let itemData = {
+                id: i,
+                nome: `Cliente ${i}`,
+                nomeSocial: `Cliente ${i} Silva`,
+                email: `cliente0${i}@gmail.com`,
+                cpf: `${i}23.456.789/0${i}`,
+                cpfData: `2024-06-0${i}`
+            }
             items.push(
-                <li className="list-group-item d-flex justify-content-between align-items-start">
+                <li className="list-group-item d-flex justify-content-between align-items-center">
                     <div className="ms-2 me-auto">
-                    <div className="fw-bold">Cliente {i}</div>
-                        cliente0{i}@gmail.com
+                    <div className="fw-bold">{itemData.nome}</div>
+                        {itemData.email}
                     <div className="collapse" id={`telefones${i}`}>
                         <div className="card card-body">
                             <h4>Telefones</h4>
@@ -34,16 +43,22 @@ export default class ListaCliente extends Component<props>{
                             </ul>
                         </div>
                     </div>
-                    </div>
                     <div className="btn-group">
+                    </div>
                         <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#telefones${i}`} aria-expanded="false" aria-controls="telefones">
-                            Ver telefones
+                            Telefones
                         </button>
                         <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#rgs${i}`} aria-expanded="false" aria-controls="rgs">
-                            Ver RGs
+                            RGs
                         </button>
                     </div>
-                    
+                    <FormularioAtualizarCliente tema={tema} valores={itemData}/>
+                    <button type="button" className="btn btn-warning mx-1" data-bs-toggle="modal" data-bs-target={`#atualizarCliente${itemData.id}`}>
+                        Atualizar
+                    </button>
+                    <button type="button" className="btn btn-danger mx-1">
+                        Excluir
+                    </button>
 
 
 
