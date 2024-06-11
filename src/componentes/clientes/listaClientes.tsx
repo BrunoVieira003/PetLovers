@@ -23,42 +23,42 @@ export default class ListaCliente extends Component<props>{
             items.push(
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                     <div className="ms-2 me-auto">
-                    <div className="fw-bold">{itemData.nome}</div>
-                        {itemData.email}
-                    <div className="collapse" id={`telefones${i}`}>
-                        <div className="card card-body">
-                            <h4>Telefones</h4>
-                            <ul className="list-group">
-                                <li className="list-group-item">(12){i} 23456789</li>
-                                <li className="list-group-item">(21){i} 2345678{i}</li>
-                            </ul>
+                        <div className="fw-bold">{itemData.nome}</div>
+                            {itemData.email}
+                        <div className="collapse" id={`telefones${i}`}>
+                            <div className="card card-body">
+                                <h4>Telefones</h4>
+                                <ul className="list-group">
+                                    <li className="list-group-item">(12){i} 23456789</li>
+                                    <li className="list-group-item">(21){i} 2345678{i}</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div className="collapse" id={`rgs${i}`}>
-                        <div className="card card-body">
-                            <h4>RGs</h4>
-                            <ul className="list-group">
-                                <li className="list-group-item">0{i} 234 567-8</li>
-                                <li className="list-group-item">{i}{i} 234 567-8</li>
-                            </ul>
+                        <div className="collapse" id={`rgs${i}`}>
+                            <div className="card card-body">
+                                <h4>RGs</h4>
+                                <ul className="list-group">
+                                    <li className="list-group-item">0{i} 234 567-8</li>
+                                    <li className="list-group-item">{i}{i} 234 567-8</li>
+                                </ul>
+                            </div>
                         </div>
+                        <div className="btn-group">
+                        </div>
+                            <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#telefones${i}`} aria-expanded="false" aria-controls="telefones">
+                                Telefones
+                            </button>
+                            <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#rgs${i}`} aria-expanded="false" aria-controls="rgs">
+                                RGs
+                            </button>
                     </div>
-                    <div className="btn-group">
-                    </div>
-                        <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#telefones${i}`} aria-expanded="false" aria-controls="telefones">
-                            Telefones
+                        <FormularioAtualizarCliente tema={tema} valores={itemData}/>
+                        <button type="button" className="btn btn-warning mx-1" data-bs-toggle="modal" data-bs-target={`#atualizarCliente${itemData.id}`}>
+                            Atualizar
                         </button>
-                        <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#rgs${i}`} aria-expanded="false" aria-controls="rgs">
-                            RGs
+                        <button type="button" className="btn btn-danger mx-1">
+                            Excluir
                         </button>
-                    </div>
-                    <FormularioAtualizarCliente tema={tema} valores={itemData}/>
-                    <button type="button" className="btn btn-warning mx-1" data-bs-toggle="modal" data-bs-target={`#atualizarCliente${itemData.id}`}>
-                        Atualizar
-                    </button>
-                    <button type="button" className="btn btn-danger mx-1">
-                        Excluir
-                    </button>
 
 
 
