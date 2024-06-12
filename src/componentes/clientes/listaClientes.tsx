@@ -24,8 +24,17 @@ export default class ListaCliente extends Component<props>{
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                     <div className="ms-2 me-auto">
                         <div className="fw-bold">{itemData.nome}</div>
-                            {itemData.email}
-                        <div className="collapse" id={`telefones${i}`}>
+                        <div className="btn-group">
+                        </div>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#telefones${i}`} aria-expanded="false" aria-controls="telefones">
+                                    Telefones
+                                </button>
+                                <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#rgs${i}`} aria-expanded="false" aria-controls="rgs">
+                                    RGs
+                                </button>
+                            </div>
+                            <div className="collapse" id={`telefones${i}`}>
                             <div className="card card-body">
                                 <h4>Telefones</h4>
                                 <ul className="list-group">
@@ -43,14 +52,6 @@ export default class ListaCliente extends Component<props>{
                                 </ul>
                             </div>
                         </div>
-                        <div className="btn-group">
-                        </div>
-                            <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#telefones${i}`} aria-expanded="false" aria-controls="telefones">
-                                Telefones
-                            </button>
-                            <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#rgs${i}`} aria-expanded="false" aria-controls="rgs">
-                                RGs
-                            </button>
                     </div>
                         <FormularioAtualizarCliente tema={tema} valores={itemData}/>
                         <button type="button" className="btn btn-warning mx-1" data-bs-toggle="modal" data-bs-target={`#atualizarCliente${itemData.id}`}>
