@@ -5,6 +5,8 @@ import FormularioCadastroCliente from "./clientes/formularioCadastroCliente";
 import ListaProduto from "./produtos/listaProdutos";
 import ListaServico from "./servicos/listaServicos";
 import ListaPet from "./pets/listaPets";
+import ClientePorConsumo from "./rankings/ClientePorConsumo";
+import RankingsHome from "./rankings/RankingsHome";
 
 type state = {
     tela: string
@@ -21,10 +23,11 @@ export default class Roteador extends Component<{}, state>{
     constructor(props: {} | Readonly<{}>) {
         super(props)
         this.state = {
-            tela: 'Clientes'
+            tela: 'Rankings'
         }
 
         this.rotas = {
+            'Rankings': <RankingsHome tema={this.tema}/>,
             'Clientes': <ListaCliente tema={this.tema}/>,
             'Pets': <ListaPet tema={this.tema}/>,
             'Produtos': <ListaProduto tema={this.tema}/>,
