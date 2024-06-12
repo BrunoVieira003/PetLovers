@@ -2,6 +2,7 @@
 import { Component, ReactNode } from "react";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
 import FormularioAtualizarCliente from "./formularioAtualizarCliente";
+import FormularioCadastroVenda from "../venda/formularioCadastroVenda";
 
 type props = {
     tema: string
@@ -69,8 +70,12 @@ export default class ListaCliente extends Component<props>{
 
         return (
             <div className="container-fluid">
-                <button type="button" className="btn btn-primary mb-4 mt-3" data-bs-toggle="modal" data-bs-target="#cadastroCliente">Cadastrar novo cliente</button>
+                <button type="button" className="btn btn-primary mb-4 mt-3 mx-1" data-bs-toggle="modal" data-bs-target="#cadastroCliente">Cadastrar novo cliente</button>
+                <button type="button" className="btn btn-primary mb-4 mt-3 mx-1" data-bs-toggle="modal" data-bs-target="#cadastroVendaProduto">Cadastrar nova venda de produto</button>
+                <button type="button" className="btn btn-primary mb-4 mt-3 mx-1" data-bs-toggle="modal" data-bs-target="#cadastroVendaServico">Cadastrar nova venda de serviço</button>
                 <FormularioCadastroCliente tema={tema}/>
+                <FormularioCadastroVenda tema={tema} tipo="produto" id="cadastroVendaProduto"/>
+                <FormularioCadastroVenda tema={tema} tipo="servico" id="cadastroVendaServico"/>
                 <div className="list-group">
                     {items}
                 </div>
