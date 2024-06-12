@@ -8,7 +8,7 @@ export default class MaisConsumidosPorRaca extends Component<props>{
     render(): ReactNode {
         return (
             <div className='container-fluid border'>
-                <h2 className='text-center'>Produtos/Serviços mais consumidos</h2>
+                <h2 className='text-center'>Produtos/Serviços mais consumidos por raça</h2>
                 <table className='table text-center'>
                 <thead>
                     <tr>

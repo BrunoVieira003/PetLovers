@@ -3,6 +3,7 @@ import ClientePorConsumo from './ClientePorConsumo'
 import ClientePorValor from './ClientePorValor'
 import MaisConsumidos from './MaisConsumidos'
 import MaisConsumidosPorRaca from './MaisConsumidosPorRaca'
+import MaisConsumidosPorTipo from './MaisConsumidosPorTipo'
 
 type props = {
     tema: string
@@ -20,6 +21,7 @@ export default class RankingsHome extends Component<props>{
                 </div>
                 <div className="container-fluid d-flex flex-wrap flex-lg-nowrap">
                     <MaisConsumidosPorRaca tema={tema}/>
+                    <MaisConsumidosPorTipo tema={tema}/>
                 </div>
             </div>
         )
