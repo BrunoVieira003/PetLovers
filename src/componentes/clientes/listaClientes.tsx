@@ -27,11 +27,11 @@ export default class ListaCliente extends Component<props>{
                         <div className="fw-bold">{itemData.nome}</div>
                         <div className="btn-group">
                         </div>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#telefones${i}`} aria-expanded="false" aria-controls="telefones">
+                            <div className="d-flex flex-wrap flex-sm-nowrap justify-content gap-2 align-items-stretch">
+                                <button className="btn btn-outline-primary flex-fill" type="button" data-bs-toggle="collapse" data-bs-target={`#telefones${i}`} aria-expanded="false" aria-controls="telefones">
                                     Telefones
                                 </button>
-                                <button className="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target={`#rgs${i}`} aria-expanded="false" aria-controls="rgs">
+                                <button className="btn btn-outline-primary flex-fill" type="button" data-bs-toggle="collapse" data-bs-target={`#rgs${i}`} aria-expanded="false" aria-controls="rgs">
                                     RGs
                                 </button>
                             </div>
@@ -55,12 +55,14 @@ export default class ListaCliente extends Component<props>{
                         </div>
                     </div>
                         <FormularioAtualizarCliente tema={tema} valores={itemData}/>
-                        <button type="button" className="btn btn-warning mx-1" data-bs-toggle="modal" data-bs-target={`#atualizarCliente${itemData.id}`}>
-                            Atualizar
-                        </button>
-                        <button type="button" className="btn btn-danger mx-1">
-                            Excluir
-                        </button>
+                        <div className="d-flex flex-wrap flex-sm-nowrap justify-content gap-2 align-items-stretch">
+                            <button type="button" className="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target={`#atualizarCliente${itemData.id}`}>
+                                Atualizar
+                            </button>
+                            <button type="button" className="btn btn-danger flex-fill">
+                                Excluir
+                            </button>
+                        </div>
 
 
 

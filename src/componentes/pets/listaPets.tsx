@@ -17,11 +17,11 @@ export default class ListaPet extends Component<props>{
                 nome: `Pet ${i}`
             }
             items.push(
-                <div className="list-group-item d-flex justify-content-between align-items-center">
+                <div className="list-group-item d-flex justify-content-between align-items-center flex-wrap flex-lg-nowrap">
                     <div className="fw-bold">{itemData.nome}</div>
-                    <div className="ms-2">
-                        <button type="button" className="btn btn-warning mb-4 mt-3 mx-1" data-bs-toggle="modal" data-bs-target={`#atualizarPet${i}`}>Atualizar</button>
-                        <button type="button" className="btn btn-danger mb-4 mt-3 mx-1">Excluir</button>
+                    <div className="ms-2 d-flex flex-wrap flex-sm-nowrap justify-content gap-2 align-items-stretch">
+                        <button type="button" className="btn btn-warning flex-fill" data-bs-toggle="modal" data-bs-target={`#atualizarPet${i}`}>Atualizar</button>
+                        <button type="button" className="btn btn-danger flex-fill">Excluir</button>
                         <FormularioAtualizarPet tema={tema} id={i} nome={itemData.nome}/>
                     </div>
                 </div>
