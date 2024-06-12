@@ -20,55 +20,55 @@ export default class MaisConsumidosPorRaca extends Component<props>{
                     <tr className='align-middle'>
                         <td>Siamês</td>
                         <td>
-                            <ul className='list-group'>
-                                <li className='list-group-item'>12 - Ração</li>
-                                <li className='list-group-item'>10 - Shampoo</li>
-                                <li className='list-group-item'>09 - Caminha</li>
-                                <li className='list-group-item'>06 - Caixa de areia</li>
+                            <ul >
+                                <li className='list-group-item'>12 unid. - Ração</li>
+                                <li className='list-group-item'>10 unid. - Shampoo</li>
+                                <li className='list-group-item'>09 unid. - Caminha</li>
+                                <li className='list-group-item'>06 unid. - Caixa de areia</li>
                             </ul>
                         </td>
                     </tr>
                     <tr className='align-middle'>
                         <td>Bulldog</td>
                         <td>
-                            <ul className='list-group'>
-                                <li className='list-group-item'>16 - Ração</li>
-                                <li className='list-group-item'>10 - Tosa</li>
-                                <li className='list-group-item'>08 - Banho</li>
-                                <li className='list-group-item'>02 - Coleira</li>
+                            <ul >
+                                <li className='list-group-item'>16 unid. - Ração</li>
+                                <li className='list-group-item'>10 unid. - Tosa</li>
+                                <li className='list-group-item'>08 unid. - Banho</li>
+                                <li className='list-group-item'>02 unid. - Coleira</li>
                             </ul>
                         </td>
                     </tr>
                     <tr className='align-middle'>
                         <td>Pinscher</td>
                         <td>
-                            <ul className='list-group'>
-                                <li className='list-group-item'>12 - Ração</li>
-                                <li className='list-group-item'>10 - Banho</li>
-                                <li className='list-group-item'>05 - Caminha</li>
-                                <li className='list-group-item'>02 - Coleira</li>
+                            <ul >
+                                <li className='list-group-item'>12 unid. - Ração</li>
+                                <li className='list-group-item'>10 unid. - Banho</li>
+                                <li className='list-group-item'>05 unid. - Caminha</li>
+                                <li className='list-group-item'>02 unid. - Coleira</li>
                             </ul>
                         </td>
                     </tr>
                     <tr className='align-middle'>
                         <td>Vira-lata</td>
                         <td>
-                            <ul className='list-group'>
-                                <li className='list-group-item'>02 - Ração</li>
-                                <li className='list-group-item'>02 - Caminha</li>
-                                <li className='list-group-item'>01 - Tosa</li>
-                                <li className='list-group-item'>01 - Colar elizabetano</li>
+                            <ul >
+                                <li className='list-group-item'>02 unid. - Ração</li>
+                                <li className='list-group-item'>02 unid. - Caminha</li>
+                                <li className='list-group-item'>01 unid. - Tosa</li>
+                                <li className='list-group-item'>01 unid. - Colar elizabetano</li>
                             </ul>
                         </td>
                     </tr>
                     <tr className='align-middle'>
                         <td>Husk</td>
                         <td>
-                            <ul className='list-group'>
-                                <li className='list-group-item'>06 - Shampoo</li>
-                                <li className='list-group-item'>05 - Ração</li>
-                                <li className='list-group-item'>03 - Remédio</li>
-                                <li className='list-group-item'>01 - Tosa</li>
+                            <ul >
+                                <li className='list-group-item'>06 unid. - Shampoo</li>
+                                <li className='list-group-item'>05 unid. - Ração</li>
+                                <li className='list-group-item'>03 unid. - Remédio</li>
+                                <li className='list-group-item'>01 unid. - Tosa</li>
                             </ul>
                         </td>
                     </tr>

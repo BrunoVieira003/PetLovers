@@ -20,7 +20,7 @@ export default class MaisConsumidosPorTipo extends Component<props>{
                     <tr className='align-middle'>
                         <td>Gato</td>
                         <td>
-                            <ul className='list-group'>
+                            <ul >
                                 <li className='list-group-item'>23 - Ração</li>
                                 <li className='list-group-item'>19 - Shampoo</li>
                                 <li className='list-group-item'>15 - Caminha</li>
@@ -31,7 +31,7 @@ export default class MaisConsumidosPorTipo extends Component<props>{
                     <tr className='align-middle'>
                         <td>Cachorro</td>
                         <td>
-                            <ul className='list-group'>
+                            <ul >
                                 <li className='list-group-item'>32 - Ração</li>
                                 <li className='list-group-item'>28 - Tosa</li>
                                 <li className='list-group-item'>26 - Banho</li>

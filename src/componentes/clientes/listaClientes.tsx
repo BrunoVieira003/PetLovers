@@ -4,6 +4,7 @@ import FormularioCadastroCliente from "./formularioCadastroCliente";
 import FormularioAtualizarCliente from "./formularioAtualizarCliente";
 import FormularioCadastroVenda from "../venda/formularioCadastroVenda";
 import FormularioCadastroTelefone from "./formularioCadastroTelefone";
+import FormularioCadastroRG from "./formularioCadastroRG";
 
 type props = {
     tema: string
@@ -57,6 +58,11 @@ export default class ListaCliente extends Component<props>{
                                 <ul className="list-group">
                                     <li className="list-group-item">0{i} 234 567-8</li>
                                     <li className="list-group-item">{i}{i} 234 567-8</li>
+                                    <li className="list-group-item">
+                                        <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target='#cadastroRG'>
+                                            Adicionar RG
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -86,6 +92,7 @@ export default class ListaCliente extends Component<props>{
                 <FormularioCadastroVenda tema={tema} tipo="produto" id="cadastroVendaProduto"/>
                 <FormularioCadastroVenda tema={tema} tipo="servico" id="cadastroVendaServico"/>
                 <FormularioCadastroTelefone tema={tema}/>
+                <FormularioCadastroRG tema={tema}/>
                 <div className="list-group">
                     {items}
                 </div>
