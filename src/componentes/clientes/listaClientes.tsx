@@ -3,6 +3,7 @@ import { Component, ReactNode } from "react";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
 import FormularioAtualizarCliente from "./formularioAtualizarCliente";
 import FormularioCadastroVenda from "../venda/formularioCadastroVenda";
+import FormularioCadastroTelefone from "./formularioCadastroTelefone";
 
 type props = {
     tema: string
@@ -41,6 +42,12 @@ export default class ListaCliente extends Component<props>{
                                 <ul className="list-group">
                                     <li className="list-group-item">(12){i} 23456789</li>
                                     <li className="list-group-item">(21){i} 2345678{i}</li>
+                                    <li className="list-group-item">
+                                        <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target='#cadastroTelefone'>
+                                            Adicionar telefone
+                                        </button>
+                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -78,6 +85,7 @@ export default class ListaCliente extends Component<props>{
                 <FormularioCadastroCliente tema={tema}/>
                 <FormularioCadastroVenda tema={tema} tipo="produto" id="cadastroVendaProduto"/>
                 <FormularioCadastroVenda tema={tema} tipo="servico" id="cadastroVendaServico"/>
+                <FormularioCadastroTelefone tema={tema}/>
                 <div className="list-group">
                     {items}
                 </div>
