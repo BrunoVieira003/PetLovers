@@ -1,30 +1,4 @@
-import styles from './ClienteItem.module.css'
-
-interface Endereco{
-    id: number
-    bairro: string
-    cidade: string
-    codigoPostal: string
-    rua: string
-    numero: string
-    informacoesAdicionais: number
-}
-
-interface Telefone{
-    id: number
-    ddd: string
-    numero: string
-}
-
-interface Cliente{
-    id: number
-    nome: string
-    nomeSocial: string
-    email: string
-    telefones: Array<Telefone>
-    links: Array<any>
-    endereco: Endereco
-}
+import { Cliente, Endereco, Telefone } from "../types/Cliente"
 
 type propsType = {
     cliente: Cliente
@@ -33,8 +7,8 @@ type propsType = {
 function ClienteItem(props: propsType){
     const { cliente } = props
 
-    function formatarEndereço(enderco: Endereco){
-        return `${cliente.endereco.rua}, ${cliente.endereco.numero} - ${cliente.endereco.bairro} - ${cliente.endereco.cidade}`
+    function formatarEndereco(endereco: Endereco){
+        return `${endereco.rua}, ${endereco.numero} - ${endereco.bairro} - ${endereco.cidade}` || ''
     }
 
     function formatarTelefones(telefones: Array<Telefone>){
@@ -56,7 +30,7 @@ function ClienteItem(props: propsType){
                 </span>
             </div>
             <div className="d-flex flex-column w-25">
-                <p className='fs-6 fw-medium'>{formatarEndereço(cliente.endereco)}</p>
+                <p className='fs-6 fw-medium'>{formatarEndereco(cliente.endereco)}</p>
                 <span className='fs-6 fst-italic'>{cliente.endereco.informacoesAdicionais}</span>
             </div>
         </div>
