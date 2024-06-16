@@ -1,5 +1,5 @@
-import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.esm'
 import './App.css';
 import ListaClientes from './components/ListaClientes';
 

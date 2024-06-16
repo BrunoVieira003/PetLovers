@@ -46,16 +46,18 @@ function ClienteItem(props: propsType){
     }
 
     return (
-        <div className={styles.ClienteItem}>
-            <div className={styles.nomes}>
-                <p>{cliente.nome}</p>
-                <span>{cliente.nomeSocial}</span>
-                <span>{cliente.email}</span>
-                <span>{formatarTelefones(cliente.telefones).join(', ')}</span>
+        <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex flex-column flex-wrap">
+                <p className='fs-4 fw-medium'>{cliente.nome}</p>
+                <span className='fs-6 fst-italic fw-regular'>{cliente.nomeSocial}</span>
+                <span className='fs-6 fst-italic fw-regular'>{cliente.email}</span>
+                <span className='fs-6 fst-italic fw-regular'>
+                    {formatarTelefones(cliente.telefones).join(', ')}
+                </span>
             </div>
-            <div className={styles.endereco}>
-                <p>{formatarEndereço(cliente.endereco)}</p>
-                <span>{cliente.endereco.informacoesAdicionais}</span>
+            <div className="d-flex flex-column w-25">
+                <p className='fs-6 fw-medium'>{formatarEndereço(cliente.endereco)}</p>
+                <span className='fs-6 fst-italic'>{cliente.endereco.informacoesAdicionais}</span>
             </div>
         </div>
     )

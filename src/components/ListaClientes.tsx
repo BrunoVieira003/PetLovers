@@ -1,7 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import ClienteItem from "./ClienteItem"
-import styles from './ListaClientes.module.css'
+import CadastroCliente from "./CadastroCliente"
+import 'bootstrap/dist/css/bootstrap.css'
 
 interface Cliente{
     id: number
@@ -41,8 +42,8 @@ function ListaClientes(){
     }, [])
 
     return (
-        <div className={styles.ListaClientes}>
-            <h1>Clientes</h1>
+        <div className="d-flex flex-column justify-content-between mt-5 mb-3 mx-5 gap-3">
+            <h1 className="mb-5 mx-auto">Clientes</h1>
             {clientes.map((cli: Cliente) => {
                 return (
                     <ClienteItem cliente={cli}/>
