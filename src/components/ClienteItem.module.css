@@ -1,0 +1,40 @@
+.ClienteItem{
+    display: flex;
+    align-items: center;
+    text-align: start;
+    justify-content: space-between;
+}
+
+.nomes{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.nomes p{
+    font-size: 1rem;
+    margin: 0 0 2% 0;
+}
+
+.nomes span{
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.endereco{
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+}
+
+.endereco p{
+    font-size: 1rem;
+    margin: 0 0 2% 0;
+}
+
+.endereco span{
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 600;
+}
