@@ -45,7 +45,7 @@ function CadastroCliente(props: propsType){
                 <TextInput state={[nomeSocial, setNomeSocial]} label="Nome social" id="nomeSocial" required/>
                 <EmailInput state={[email, setEmail]} label="Email" id="email" required/>
                 <EnderecoInput state={[endereco, setEndereco]}  required/>
-                <input type="submit" className="btn btn-primary" value="Enviar"/>
+                <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
             </form>
         </Modal>
     )

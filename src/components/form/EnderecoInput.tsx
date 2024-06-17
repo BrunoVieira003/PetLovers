@@ -1,12 +1,6 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useState } from "react"
 import { Endereco } from "../../types/Cliente"
 
-// bairro: string
-// cidade: string
-// codigoPostal: string
-// rua: string
-// numero: string
-
 type propsType = {
     required?: boolean
     state: [Endereco, Dispatch<SetStateAction<Endereco>>]
