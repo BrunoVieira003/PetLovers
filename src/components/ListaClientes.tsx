@@ -11,6 +11,7 @@ function ListaClientes(){
     async function getClientes(){
         try{ 
             const response = await axios.get('http://localhost:32831/cliente/clientes')
+            setClientes(response.data)
         }catch(error: any){
             setClientes(error.response.data)
         }
