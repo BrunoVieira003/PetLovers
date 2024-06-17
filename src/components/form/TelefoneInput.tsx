@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { Telefone } from "../../types/Cliente"
+import IconButton from "../IconButton"
 
 type propsType = {
     id?: string
@@ -16,6 +17,14 @@ function TelefoneInput(props: propsType){
     const [ddd, setDdd] = useState<string>(state[index].ddd)
     const [numero, setNumero] = useState<string>(state[index].numero)
 
+    function removeTelefone(){
+        const newTelefones = state.map(tel => tel)
+        newTelefones.splice(index, 1)
+
+        setState(newTelefones)
+
+    }
+
     useEffect(()=>{
         const newTelefones = state.map(tel => tel)
         const novoTelefone: Telefone = {
@@ -31,14 +40,21 @@ function TelefoneInput(props: propsType){
     }, [ddd, numero])
 
     return (
-        <div className="input-group">
-            <div className="form-floating form-floating-group mb-3 w-25">
+        <div className="input-group mb-3">
+            <div className="form-floating form-floating-group w-25">
                 <input type="text" className="form-control" id='ddd' placeholder="" maxLength={2} name='ddd' required={required} value={ddd} onChange={(e) => {setDdd(e.target.value)}}/>
                 <label htmlFor='ddd'>DDD</label>
             </div>
-            <div className="form-floating form-floating-group mb-3 w-75">
+            <div className="form-floating form-floating-group w-50">
                 <input type="text" className="form-control" id='numero' placeholder="" name='numero' maxLength={9} required={required} value={numero} onChange={(e) => {setNumero(e.target.value)}}/>
                 <label htmlFor='numero'>N</label>
+            </div>
+            <div>
+                <IconButton
+                    icon={<i className="bi-trash-fill"></i>}
+                    className="btn-outline-danger h-100"
+                    onClick={removeTelefone}
+                />
             </div>
         </div>
     )
