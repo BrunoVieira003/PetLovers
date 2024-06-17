@@ -13,9 +13,9 @@ type propsType = {
 function CadastroCliente(props: propsType){
     const {afterSubmit} = props
 
-    const [nome, setNome] = useState<string>()
-    const [nomeSocial, setNomeSocial] = useState<string>()
-    const [email, setEmail] = useState<string>()
+    const [nome, setNome] = useState<string>('')
+    const [nomeSocial, setNomeSocial] = useState<string>('')
+    const [email, setEmail] = useState<string>('')
     const [endereco, setEndereco] = useState<Endereco>(EnderecoVazio)
 
     async function enviar(e: FormEvent){
@@ -28,7 +28,10 @@ function CadastroCliente(props: propsType){
         })
 
         afterSubmit()
+        reset()
+    }
 
+    function reset(){
         setNome('')
         setNomeSocial('')
         setEmail('')
@@ -38,10 +41,10 @@ function CadastroCliente(props: propsType){
     return (
         <Modal id="cadastroCliente" title="Cadastro de cliente">
             <form onSubmit={enviar}>
-                <TextInput setState={setNome} label="Nome" id="nome" required/>
-                <TextInput setState={setNomeSocial} label="Nome social" id="nomeSocial" required/>
-                <EmailInput setState={setEmail} label="Email" id="email" required/>
-                <EnderecoInput setState={setEndereco} required/>
+                <TextInput state={[nome, setNome]} label="Nome" id="nome" required/>
+                <TextInput state={[nomeSocial, setNomeSocial]} label="Nome social" id="nomeSocial" required/>
+                <EmailInput state={[email, setEmail]} label="Email" id="email" required/>
+                <EnderecoInput state={[endereco, setEndereco]}  required/>
                 <input type="submit" className="btn btn-primary" value="Enviar"/>
             </form>
         </Modal>
