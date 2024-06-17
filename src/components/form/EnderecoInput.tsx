@@ -10,13 +10,13 @@ function EnderecoInput(props: propsType){
     const {required} = props
     const [state, setState] = props.state
 
-    const [rua, setRua] = useState<string>('')
-    const [numero, setNumero] = useState<string>('')
-    const [bairro, setBairro] = useState<string>('')
-    const [cidade, setCidade] = useState<string>('')
-    const [estado, setEstado] = useState<string>('')
-    const [codigoPostal, setCodigoPostal] = useState<string>('')
-    const [infoAdicionais, setInfoAdicionais] = useState<string>('')
+    const [rua, setRua] = useState<string>(state.rua)
+    const [numero, setNumero] = useState<string>(state.numero)
+    const [bairro, setBairro] = useState<string>(state.bairro)
+    const [cidade, setCidade] = useState<string>(state.cidade)
+    const [estado, setEstado] = useState<string>(state.estado)
+    const [codigoPostal, setCodigoPostal] = useState<string>(state.codigoPostal)
+    const [infoAdicionais, setInfoAdicionais] = useState<string>(state.informacoesAdicionais)
 
     useEffect(()=>{
         const endereco: Endereco = {
@@ -32,7 +32,7 @@ function EnderecoInput(props: propsType){
         setState(endereco)
     }, [rua, numero, bairro, cidade, estado, codigoPostal, infoAdicionais])
 
-    useCallback(() => {
+    useEffect(() => {
         setRua(state.rua)
         setNumero(state.numero)
         setBairro(state.bairro)
@@ -40,6 +40,7 @@ function EnderecoInput(props: propsType){
         setEstado(state.estado)
         setCodigoPostal(state.codigoPostal)
         setInfoAdicionais(state.informacoesAdicionais)
+        console.log(state)
     }, [state])
 
     return (

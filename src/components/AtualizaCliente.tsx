@@ -28,15 +28,6 @@ function AtualizaCliente(props: propsType){
             email,
             endereco
         })
-
-        reset()
-    }
-
-    function reset(){
-        setNome('')
-        setNomeSocial('')
-        setEmail('')
-        setEndereco(EnderecoVazio)
     }
 
     return (
