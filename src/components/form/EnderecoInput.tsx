@@ -40,7 +40,6 @@ function EnderecoInput(props: propsType){
         setEstado(state.estado)
         setCodigoPostal(state.codigoPostal)
         setInfoAdicionais(state.informacoesAdicionais)
-        console.log(state)
     }, [state])
 
     return (

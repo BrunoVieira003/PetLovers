@@ -10,7 +10,7 @@ interface Endereco{
 }
 
 interface Telefone{
-    id: number
+    id?: number
     ddd: string
     numero: string
 }
