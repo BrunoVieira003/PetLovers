@@ -2,14 +2,13 @@ import { Component, ReactNode } from "react";
 import FormularioAtualizarServico from "./formularioAtualizarServico";
 import FormularioCadastroServico from "./formularioCadastroServico";
 
-type props = {
+type propsType = {
     tema: string
 }
 
-export default class ListaServicos extends Component<props>{
-    render() {
-        let tema = this.props.tema
-        let items: Array<ReactNode> = []
+export default function ListaServicos(props: propsType){
+        const {tema} = props
+        const items: Array<ReactNode> = []
         for(let i = 1; i < 7; i++){
             let itemData = {
                 id: i,
@@ -36,5 +35,4 @@ export default class ListaServicos extends Component<props>{
                 </div>
             </div>
         )
-    }
 }
