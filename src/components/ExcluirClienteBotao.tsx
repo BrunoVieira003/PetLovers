@@ -3,10 +3,11 @@ import axios from "axios"
 type propsType = {
     id: number
     afterSubmit?: any
+    className?: string
 }
 
 function ExcluirClienteBotao(props: propsType){
-    const { id, afterSubmit } = props
+    const { id, afterSubmit, className } = props
 
     async function excluir(){
         await axios.delete('http://localhost:32831/cliente/excluir', {
@@ -18,7 +19,7 @@ function ExcluirClienteBotao(props: propsType){
         afterSubmit()
         
     }
-    return <button className="btn btn-danger" onClick={excluir}>Excluir</button>
+    return <button className={"btn btn-danger "+className} onClick={excluir}>Excluir</button>
 }
 
 export default ExcluirClienteBotao
