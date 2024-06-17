@@ -1,4 +1,5 @@
 import { Cliente, Endereco, Telefone } from "../types/Cliente"
+import AtualizaCliente from "./AtualizaCliente"
 import ExcluirClienteBotao from "./ExcluirClienteBotao"
 
 type propsType = {
@@ -34,7 +35,13 @@ function ClienteItem(props: propsType){
                 <p className='fs-6 fw-medium'>{formatarEndereco(cliente.endereco)}</p>
                 <span className='fs-6 fst-italic'>{cliente.endereco.informacoesAdicionais}</span>
             </div>
-            <ExcluirClienteBotao id={cliente.id}/>
+            <div>
+                <button type="button" className="btn btn-warning mx-auto" data-bs-toggle="modal" data-bs-target={`#atualizaCliente${cliente.id}`}>
+                    Atualizar cliente
+                </button>
+                <ExcluirClienteBotao id={cliente.id}/>
+            </div>
+            <AtualizaCliente cliente={cliente} id={cliente.id}/>
         </div>
     )
 }

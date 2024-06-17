@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useCallback, useEffect, useState } from "react"
 import { Endereco } from "../../types/Cliente"
 
 // bairro: string
@@ -38,7 +38,7 @@ function EnderecoInput(props: propsType){
         setState(endereco)
     }, [rua, numero, bairro, cidade, estado, codigoPostal, infoAdicionais])
 
-    useEffect(() => {
+    useCallback(() => {
         setRua(state.rua)
         setNumero(state.numero)
         setBairro(state.bairro)

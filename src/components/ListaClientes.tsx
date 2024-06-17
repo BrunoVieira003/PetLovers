@@ -11,9 +11,7 @@ function ListaClientes(){
     async function getClientes(){
         try{ 
             const response = await axios.get('http://localhost:32831/cliente/clientes')
-            console.log(response)
         }catch(error: any){
-            console.log(error.response.data)
             setClientes(error.response.data)
         }
 
@@ -21,7 +19,6 @@ function ListaClientes(){
 
     useEffect(()=>{
         getClientes()
-       console.log(clientes)
     }, [])
 
     return (
