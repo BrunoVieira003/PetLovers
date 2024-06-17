@@ -25,7 +25,6 @@ function CadastroCliente(props: propsType){
         e.preventDefault()
         const clearTelefones = telefones.map(tel => {
             delete tel.id
-            console.log(tel)
             return tel
         })
         await axios.post('http://localhost:32831/cliente/cadastrar', {
