@@ -35,7 +35,7 @@ function EnderecoInput(props: propsType){
         }
 
         setState(endereco)
-    })
+    }, [rua, numero, bairro, cidade, estado, codigoPostal, infoAdicionais])
 
     return (
         <>

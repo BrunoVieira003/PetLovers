@@ -45,6 +45,6 @@ const ClienteVazio: Cliente = {
     endereco: EnderecoVazio
 }
 
-export {EnderecoVazio as EmptyEndereco, ClienteVazio as EmptyCliente}
+export {EnderecoVazio, ClienteVazio}
 
 export type {Cliente, Telefone, Endereco}

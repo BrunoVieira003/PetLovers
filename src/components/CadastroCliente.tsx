@@ -4,13 +4,19 @@ import EmailInput from "./form/EmailInput"
 import TextInput from "./form/TextInput"
 import axios from "axios"
 import EnderecoInput from "./form/EnderecoInput"
-import { EmptyEndereco, Endereco } from "../types/Cliente"
+import {Endereco, EnderecoVazio } from "../types/Cliente"
 
-function CadastroCliente(){
+type propsType = {
+    afterSubmit?: any
+}
+
+function CadastroCliente(props: propsType){
+    const {afterSubmit} = props
+
     const [nome, setNome] = useState<string>()
     const [nomeSocial, setNomeSocial] = useState<string>()
     const [email, setEmail] = useState<string>()
-    const [endereco, setEndereco] = useState<Endereco>(EmptyEndereco)
+    const [endereco, setEndereco] = useState<Endereco>(EnderecoVazio)
 
     async function enviar(e: FormEvent){
         e.preventDefault()
@@ -20,6 +26,13 @@ function CadastroCliente(){
             email,
             endereco
         })
+
+        afterSubmit()
+
+        setNome('')
+        setNomeSocial('')
+        setEmail('')
+        setEndereco(EnderecoVazio)
     }
 
     return (

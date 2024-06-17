@@ -30,7 +30,7 @@ function ListaClientes(){
             <button type="button" className="btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#cadastroCliente">
                 Cadastrar cliente
             </button>
-            <CadastroCliente/>
+            <CadastroCliente afterSubmit={getClientes}/>
             {clientes.map((cli: Cliente) => {
                 return (
                     <ClienteItem cliente={cli}/>
