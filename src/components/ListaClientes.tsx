@@ -23,15 +23,14 @@ function ListaClientes(){
 
     return (
         <div className="d-flex flex-column justify-content-between mt-5 mb-3 mx-5 gap-3">
-            <h1 className="mb-5 mx-auto">Clientes</h1>
-            <button type="button" className="btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#cadastroCliente">
+            <h1 className="mb-4 mx-auto">Clientes</h1>
+            <button type="button" className="btn btn-primary mx-auto mb-5" data-bs-toggle="modal" data-bs-target="#cadastroCliente">
                 Cadastrar cliente
             </button>
-            <button className="btn btn-outline-primary" onClick={getClientes}>Recarregar clientes</button>
             <CadastroCliente afterSubmit={getClientes}/>
             {clientes.map((cli: Cliente) => {
                 return (
-                    <ClienteItem cliente={cli}/>
+                    <ClienteItem cliente={cli} afterAnySubmit={getClientes}/>
                 )
             })}
         </div>

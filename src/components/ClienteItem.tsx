@@ -4,10 +4,11 @@ import ExcluirClienteBotao from "./ExcluirClienteBotao"
 
 type propsType = {
     cliente: Cliente
+    afterAnySubmit?: any
 }
 
 function ClienteItem(props: propsType){
-    const { cliente } = props
+    const { cliente, afterAnySubmit } = props
 
     function formatarEndereco(endereco: Endereco){
         return `${endereco.rua}, ${endereco.numero} - ${endereco.bairro} - ${endereco.cidade}` || ''
@@ -39,9 +40,9 @@ function ClienteItem(props: propsType){
                 <button type="button" className="btn btn-warning mx-auto" data-bs-toggle="modal" data-bs-target={`#atualizaCliente${cliente.id}`}>
                     Atualizar cliente
                 </button>
-                <ExcluirClienteBotao id={cliente.id}/>
+                <ExcluirClienteBotao id={cliente.id} afterSubmit={afterAnySubmit}/>
             </div>
-            <AtualizaCliente cliente={cliente} id={cliente.id}/>
+            <AtualizaCliente cliente={cliente} id={cliente.id} afterSubmit={afterAnySubmit}/>
         </div>
     )
 }

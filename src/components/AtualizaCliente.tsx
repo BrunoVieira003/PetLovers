@@ -9,10 +9,11 @@ import {Cliente, Endereco } from "../types/Cliente"
 type propsType = {
     id: string | number
     cliente: Cliente
+    afterSubmit?: any
 }
 
 function AtualizaCliente(props: propsType){
-    const {id, cliente} = props
+    const {id, cliente, afterSubmit} = props
 
     const [nome, setNome] = useState<string>(cliente.nome)
     const [nomeSocial, setNomeSocial] = useState<string>(cliente.nomeSocial)
@@ -28,6 +29,8 @@ function AtualizaCliente(props: propsType){
             email,
             endereco
         })
+
+        afterSubmit()
     }
 
     return (
