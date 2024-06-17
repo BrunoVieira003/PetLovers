@@ -4,7 +4,7 @@ import EmailInput from "./form/EmailInput"
 import TextInput from "./form/TextInput"
 import axios from "axios"
 import EnderecoInput from "./form/EnderecoInput"
-import {Cliente, Endereco, EnderecoVazio } from "../types/Cliente"
+import {Cliente, Endereco } from "../types/Cliente"
 
 type propsType = {
     id: string | number
@@ -28,15 +28,6 @@ function AtualizaCliente(props: propsType){
             email,
             endereco
         })
-
-        reset()
-    }
-
-    function reset(){
-        setNome('')
-        setNomeSocial('')
-        setEmail('')
-        setEndereco(EnderecoVazio)
     }
 
     return (
