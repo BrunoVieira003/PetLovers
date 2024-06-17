@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import { Component, ReactNode, useState } from "react";
 import BarraNavegacao from "./barraNavegacao";
 import ListaCliente from "./clientes/listaClientes";
 import FormularioCadastroCliente from "./clientes/formularioCadastroCliente";
@@ -8,52 +8,32 @@ import ListaPet from "./pets/listaPets";
 import ClientePorConsumo from "./rankings/ClientePorConsumo";
 import RankingsHome from "./rankings/RankingsHome";
 
-type state = {
-    tela: string
-}
-
 type TRotas = {
     [key: string]: ReactNode;
-  };
+};
 
-export default class Roteador extends Component<{}, state>{
-    private rotas: TRotas
-    private tema = "#0dcaf0"
-
-    constructor(props: {} | Readonly<{}>) {
-        super(props)
-        this.state = {
-            tela: 'Rankings'
+export default function Roteador(){
+    const tema = "#0dcaf0"
+    const rotas: TRotas = {
+        'Rankings': <RankingsHome tema={tema}/>,
+        'Clientes': <ListaCliente tema={tema}/>,
+        'Pets': <ListaPet tema={tema}/>,
+            'Produtos': <ListaProduto tema={tema}/>,
+            'Serviços': <ListaServico tema={tema}/>,
         }
 
-        this.rotas = {
-            'Rankings': <RankingsHome tema={this.tema}/>,
-            'Clientes': <ListaCliente tema={this.tema}/>,
-            'Pets': <ListaPet tema={this.tema}/>,
-            'Produtos': <ListaProduto tema={this.tema}/>,
-            'Serviços': <ListaServico tema={this.tema}/>,
-        }
+    const [telaAtual, setTelaAtual] = useState<string>('Rankings')
 
-        this.selecionarView = this.selecionarView.bind(this)
-    }
-
-    selecionarView(novaTela: string, evento: Event) {
+    function selecionarView(novaTela: string, evento: Event) {
         evento.preventDefault()
-        console.log(novaTela);
-        this.setState({
-            tela: novaTela
-        })
+        setTelaAtual(novaTela)
     }
-
-    render() {
-        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema={this.tema} botoes={Object.keys(this.rotas)} />
-        let currentView: ReactNode = this.rotas[this.state.tela]
         
         return (
             <>
-                {barraNavegacao}
-                {currentView}
+                <BarraNavegacao seletorView={selecionarView} tema={tema} botoes={Object.keys(rotas)}/>
+                {rotas[telaAtual]}
             </>
         )
-    }
+
 }
