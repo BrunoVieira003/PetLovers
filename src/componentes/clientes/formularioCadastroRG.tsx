@@ -3,22 +3,20 @@ import Modal from "../modal";
 import TextInput from "../form/TextInput";
 import RGInput from "../form/RGInput";
 
-type props = {
+type propsType = {
     tema: string
 }
 
-export default class FormularioCadastroRG extends Component<props> {
+export default function FormularioCadastroRG(props: propsType){
+    const {tema} = props
 
-    render() {
-        let tema = this.props.tema
-        return (
-            <div className="container-fluid">
-                <Modal title="Cadastro de telefone" id="cadastroRG">
-                    <form>
-                        <RGInput/>
-                    </form>
-                </Modal>
-            </div>
-        )
-    }
+    return (
+        <div className="container-fluid">
+            <Modal title="Cadastro de telefone" id="cadastroRG">
+                <form>
+                    <RGInput/>
+                </form>
+            </Modal>
+        </div>
+    )
 }

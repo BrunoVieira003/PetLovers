@@ -4,7 +4,7 @@ import TextInput from "../form/TextInput";
 import EmailInput from "../form/EmailInput";
 import CPFInput from "../form/CpfInput";
 
-type props = {
+type propsType = {
     tema: string,
     valores: {
         id: number,
@@ -16,21 +16,19 @@ type props = {
     }
 }
 
-export default class FormularioAtualizarCliente extends Component<props> {
+export default function FormularioAtualizarCliente(props: propsType){
 
-    render() {
-        const {tema, valores} = this.props
-        return (
-            <div className="container-fluid">
-                <Modal title="Atualizar cliente" id={`atualizarCliente${valores.id}`}>
-                    <form>
-                        <TextInput label="Nome" valor={valores.nome} id={`nome${valores.id}`}/>
-                        <TextInput label="Nome social" valor={valores.nomeSocial} id={`nomeSocial${valores.id}`}/>
-                        <EmailInput label="Email" valor={valores.email} id={`email${valores.id}`}/>
-                        <CPFInput valorCPF={valores.cpf} valorData={valores.cpfData}/>
-                    </form>
-                </Modal>
-            </div>
-        )
-    }
+    const {tema, valores} = props
+    return (
+        <div className="container-fluid">
+            <Modal title="Atualizar cliente" id={`atualizarCliente${valores.id}`}>
+                <form>
+                    <TextInput label="Nome" valor={valores.nome} id={`nome${valores.id}`}/>
+                    <TextInput label="Nome social" valor={valores.nomeSocial} id={`nomeSocial${valores.id}`}/>
+                    <EmailInput label="Email" valor={valores.email} id={`email${valores.id}`}/>
+                    <CPFInput valorCPF={valores.cpf} valorData={valores.cpfData}/>
+                </form>
+            </Modal>
+        </div>
+    )
 }
