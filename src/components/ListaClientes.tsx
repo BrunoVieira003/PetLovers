@@ -30,6 +30,7 @@ function ListaClientes(){
             <button type="button" className="btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#cadastroCliente">
                 Cadastrar cliente
             </button>
+            <button className="btn btn-outline-primary" onClick={getClientes}>Recarregar clientes</button>
             <CadastroCliente afterSubmit={getClientes}/>
             {clientes.map((cli: Cliente) => {
                 return (

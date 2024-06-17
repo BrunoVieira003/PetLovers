@@ -1,4 +1,5 @@
 import { Cliente, Endereco, Telefone } from "../types/Cliente"
+import ExcluirClienteBotao from "./ExcluirClienteBotao"
 
 type propsType = {
     cliente: Cliente
@@ -33,6 +34,7 @@ function ClienteItem(props: propsType){
                 <p className='fs-6 fw-medium'>{formatarEndereco(cliente.endereco)}</p>
                 <span className='fs-6 fst-italic'>{cliente.endereco.informacoesAdicionais}</span>
             </div>
+            <ExcluirClienteBotao id={cliente.id}/>
         </div>
     )
 }
