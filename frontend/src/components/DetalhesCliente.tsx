@@ -44,7 +44,6 @@ export default function DetalhesCliente(){
                 <div>
                     <h1 className="mb-1">{cliente.nome}</h1>
                     <p className="fst-italic">Desde {formatarData(cliente.dataCadastro)}</p>
-                    <CadastroPet/>
                     <div className="d-flex align-items-center mb-5 gap-3">
                         <button type="button" className="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#cadastroPet">
                             <i className="bi-plus-circle-fill">Novo pet</i>
@@ -78,6 +77,7 @@ export default function DetalhesCliente(){
                         </div>
                     }
                 {cliente.pets.length > 0 && <ListaPets/>}
+                <CadastroPet afterSubmit={getCliente}/>
                 </div>
             : <h1>Cliente não disponível</h1>}
             <UpdateCliente cliente={cliente}/>
