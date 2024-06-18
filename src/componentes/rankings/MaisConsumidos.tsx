@@ -2,11 +2,13 @@ import { Component, ReactNode } from 'react'
 
 type propsType = {
     tema: string
+    className?: string
 }
 
 export default function MaisConsumidos(props: propsType){
+    const {tema, className} = props
     return (
-        <div className='container-fluid border'>
+        <div className={'container-fluid border '+className}>
             <h2 className='text-center'>Produtos/Serviços mais consumidos</h2>
             <table className='table table-borderless text-center'>
             <thead>

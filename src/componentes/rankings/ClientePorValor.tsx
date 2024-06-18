@@ -2,11 +2,14 @@ import { Component, ReactNode } from 'react'
 
 type propsType = {
     tema: string
+    className?: string
 }
 
 export default function ClientePorValor(props: propsType){
+    const {tema, className} = props
+
     return (
-        <div className='container-fluid border'>
+        <div className={'container-fluid border '+className}>
             <h2 className='text-center'>Clientes que mais gastaram</h2>
             <table className='table table-borderless text-center'>
             <thead>

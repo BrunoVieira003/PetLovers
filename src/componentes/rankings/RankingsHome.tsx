@@ -13,14 +13,14 @@ export default function RankingsHome(props: propsType){
     const { tema } = props
     return (
         <div className='container-fluid'>
-            <div className="container-fluid d-flex flex-wrap flex-lg-nowrap">
-                <ClientePorConsumo tema={tema}/>
-                <ClientePorValor tema={tema}/>
-                <MaisConsumidos tema={tema}/>
+            <div className="container-fluid row my-5 mx-auto">
+                <ClientePorConsumo tema={tema} className='col'/>
+                <ClientePorValor tema={tema} className='col'/>
+                <MaisConsumidos tema={tema} className='col'/>
             </div>
-            <div className="container-fluid d-flex flex-wrap flex-lg-nowrap">
-                <MaisConsumidosPorRaca tema={tema}/>
-                <MaisConsumidosPorTipo tema={tema}/>
+            <div className="container-fluid row my-5 mx-auto">
+                <MaisConsumidosPorRaca tema={tema} className='col'/>
+                <MaisConsumidosPorTipo tema={tema} className='col'/>
             </div>
         </div>
     )
