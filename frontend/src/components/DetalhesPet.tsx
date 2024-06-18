@@ -21,8 +21,8 @@ export default function DetalhesPet(){
 
     async function excluir() {
         try{
-            await axios.delete(`http://localhost:8000/clientes/${clienteId}`)
-            navigate(`http://localhost:8000/clientes/${clienteId}`)
+            await axios.delete(`http://localhost:8000/clientes/${clienteId}/pets/${petId}`)
+            navigate(`/clientes/${clienteId}`)
         }catch(error){
             console.log(error);
         }

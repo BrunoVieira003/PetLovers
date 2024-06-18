@@ -24,8 +24,8 @@ export default function ListaPets(){
     }, [])
 
     return (
-        <div className="d-flex flex-column align-items-around container gap-3">
-            <h1 className="mb-5">Pets</h1>
+        <div className="d-flex flex-column align-items-around container gap-3 mt-5">
+            <h1 className="mb-3">Pets</h1>
             <div>
                 {pets.length > 0 && pets.map(pet => {
                     return (
