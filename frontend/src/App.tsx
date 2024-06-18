@@ -8,6 +8,8 @@ import ListaClientes from './components/cliente/ListaClientes';
 import DetalhesPet from './components/pet/DetalhesPet';
 import ListaServicos from './components/servico/ListaServicos';
 import DetalhesServico from './components/servico/DetalhesServico';
+import ListaProdutos from './components/servico copy/ListaProdutos';
+import DetalhesProduto from './components/servico copy/DetalhesProduto';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path ="/clientes/:clienteId/pets/:petId" element={<DetalhesPet />} />
         <Route path ="/servicos" element={<ListaServicos />} />
         <Route path ="/servicos/:servicoId" element={<DetalhesServico />} />
+        <Route path ="/produtos" element={<ListaProdutos />} />
+        <Route path ="/produtos/:produtoId" element={<DetalhesProduto />} />
       </Routes>
     </>
   );

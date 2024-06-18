@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import 'bootstrap/dist/css/bootstrap.css'
 import { Servico } from "../../types/Servico"
 import CadastroServico from "./CadastroServico"
 
