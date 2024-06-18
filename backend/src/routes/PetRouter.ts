@@ -17,7 +17,7 @@ export default class PetRouter{
             if(cliente){
                 return res.status(200).send({
                     message: 'Success',
-                    data: cliente.pets
+                    pets: cliente.pets
                 })
             }else{
                 return res.status(404).send({
@@ -47,7 +47,7 @@ export default class PetRouter{
 
             return res.status(200).send({
                 message: 'Success',
-                data: pet
+                pet
             })
         })
 
@@ -74,7 +74,7 @@ export default class PetRouter{
             
             return res.status(200).send({
                 message: 'Success',
-                data: novoPet
+                pet: novoPet
             })
 
             
@@ -112,7 +112,6 @@ export default class PetRouter{
             
             return res.status(200).send({
                 message: 'Success',
-                data: novoPet
             })  
         })
 
