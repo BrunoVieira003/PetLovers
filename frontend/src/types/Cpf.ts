@@ -1,6 +1,6 @@
 type Cpf = {
     valor: string
-    dataEmissao: Date
+    dataEmissao: string
 }
 
 export type {Cpf}

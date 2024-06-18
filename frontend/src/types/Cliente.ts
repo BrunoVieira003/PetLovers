@@ -8,10 +8,10 @@ type Cliente = {
     nome: string
     nomeSocial: string
     cpf: Cpf
-    rgs: Array<Rg>
-    dataCadastro: Date
-    telefones: Array<Telefone>
-    pets: Array<Pet>
+    rgs?: Array<Rg>
+    dataCadastro?: Date
+    telefones?: Array<Telefone>
+    pets?: Array<Pet>
 }
 
 export type {Cliente}
