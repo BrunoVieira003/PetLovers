@@ -1,9 +1,14 @@
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import DetalhesCliente from './components/DetalhesCliente';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <Routes>
+      <Route path ="/clientes/:clienteId" element={<DetalhesCliente />} />
+      </Routes>
+    </>
   );
 }
 
