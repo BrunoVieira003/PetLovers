@@ -1,19 +1,30 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { Cliente } from "../types/Cliente"
 import { formatarData, formatarTelefone } from "../util/formatters"
 import { Telefone } from "../types/Telefone"
 import UpdateCliente from "./UpdateCliente"
+import IconButton from "./IconButton"
 
 export default function DetalhesCliente(){
     const {clienteId} = useParams()
     const [cliente, setCliente] = useState<Cliente>({nome: '', nomeSocial: '', cpf: {valor: '', dataEmissao: ''}, telefones: [] })
+    const navigate = useNavigate();
 
     async function getCliente(){
         try{
             const response = await axios.get(`http://localhost:8000/clientes/${clienteId}`)
             setCliente(response.data.cliente)
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    async function excluir() {
+        try{
+            await axios.delete(`http://localhost:8000/clientes/${clienteId}`)
+            navigate('/clientes')
         }catch(error){
             console.log(error);
         }
@@ -28,10 +39,18 @@ export default function DetalhesCliente(){
             {cliente.id ?
                 <div>
                     <h1 className="mb-1">{cliente.nome}</h1>
-                    <p className="mb-5 fst-italic">Desde {formatarData(cliente.dataCadastro)}</p>
-                    <button type="button" className="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#updateCliente">
-                        Editar
-                    </button>
+                    <p className="fst-italic">Desde {formatarData(cliente.dataCadastro)}</p>
+                    <div className="d-flex align-items-center mb-5 gap-3">
+                        <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateCliente">
+                            <i className="bi-pencil-square">Editar</i>
+                        </button>
+                        <IconButton 
+                        className="btn-outline-danger" 
+                        icon={<i className="bi-trash">Excluir</i>}
+                        onClick={excluir}
+                        />
+                    </div>
+
                     <h2 className="fs-5 mb-0 fw-light fst-italic">Nome social</h2>
                     <p className="mb-2 fs-2">{cliente.nomeSocial}</p>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">CPF</h2>
