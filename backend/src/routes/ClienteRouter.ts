@@ -79,7 +79,7 @@ export default class ClienteRouter{
                     valor: cpf.valor,
                     dataEmissao: new Date(cpf.dataEmissao+'T00:00')
                 },
-                pets: [],
+                pets: this.clientes[clienteIndex].pets,
                 rgs: [],
                 telefones: [],
                 dataCadastro: new Date
