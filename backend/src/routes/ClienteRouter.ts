@@ -43,7 +43,7 @@ export default class ClienteRouter{
                 nomeSocial,
                 cpf: {
                     valor: cpf.valor,
-                    dataEmissao: new Date(cpf.dataEmissao)
+                    dataEmissao: new Date(cpf.dataEmissao+'T00:00')
                 },
                 pets: [],
                 rgs: [],
@@ -77,7 +77,7 @@ export default class ClienteRouter{
                 nomeSocial,
                 cpf: {
                     valor: cpf.valor,
-                    dataEmissao: new Date(cpf.dataEmissao)
+                    dataEmissao: new Date(cpf.dataEmissao+'T00:00')
                 },
                 pets: [],
                 rgs: [],
