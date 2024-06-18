@@ -14,7 +14,7 @@ export default class ClienteRouter{
         this.router.get('/', (req, res) => {
             return res.status(200).send({
                 message: 'Success',
-                data: this.clientes
+                clientes: this.clientes
             })
         })
 
@@ -55,7 +55,7 @@ export default class ClienteRouter{
             
             res.status(200).send({
                 message: 'Success',
-                data: novoCliente
+                cliente: novoCliente
             })
         })
 
