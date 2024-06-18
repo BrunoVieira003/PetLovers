@@ -36,7 +36,7 @@ class ClienteRouter{
 
         //create
         this.router.post('/', (req: Request, res: Response) => {
-            const {nome, nomeSocial, cpf, rgs, telefones} = req.body
+            const {nome, nomeSocial, cpf} = req.body
             const novoCliente = {
                 id: empresa.clientesCounter++,
                 nome,
@@ -45,8 +45,9 @@ class ClienteRouter{
                     valor: cpf.valor,
                     dataEmissao: new Date(cpf.dataEmissao)
                 },
-                rgs,
-                telefones,
+                pets: [],
+                rgs: [],
+                telefones: [],
                 dataCadastro: new Date
             }
 
@@ -61,7 +62,7 @@ class ClienteRouter{
         //update
         this.router.put('/:clienteId', (req: Request, res: Response) => {
             const clienteId = parseInt(req.params.clienteId)
-            const {nome, nomeSocial, cpf, rgs, telefones} = req.body
+            const {nome, nomeSocial, cpf} = req.body
 
             const clienteIndex = this.clientes.findIndex(cli => cli.id === clienteId)
             if(clienteIndex < 0){
@@ -78,8 +79,9 @@ class ClienteRouter{
                     valor: cpf.valor,
                     dataEmissao: new Date(cpf.dataEmissao)
                 },
-                rgs,
-                telefones,
+                pets: [],
+                rgs: [],
+                telefones: [],
                 dataCadastro: new Date
             }
 
