@@ -40,7 +40,7 @@ export default class ProdutoRouter{
             const novoProduto = {
                 id: empresa.produtosCounter++,
                 nome,
-                preco: parseFloat(preco),
+                preco: parseInt(preco),
             }
 
             this.produtos.push(novoProduto)
@@ -66,7 +66,7 @@ export default class ProdutoRouter{
             const novoProduto = {
                 id: produtoId,
                 nome,
-                preco: parseFloat(preco)
+                preco: parseInt(preco)
             }
 
             this.produtos.splice(produtoIndex, 1, novoProduto)

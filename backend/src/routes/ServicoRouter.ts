@@ -40,7 +40,7 @@ export default class ServicoRouter{
             const novoServico = {
                 id: empresa.servicosCounter++,
                 nome,
-                preco: parseFloat(preco),
+                preco: parseInt(preco),
             }
 
             this.servicos.push(novoServico)
@@ -66,7 +66,7 @@ export default class ServicoRouter{
             const novoServico = {
                 id: servicoId,
                 nome,
-                preco: parseFloat(preco)
+                preco: parseInt(preco)
             }
 
             this.servicos.splice(servicoIndex, 1, novoServico)
