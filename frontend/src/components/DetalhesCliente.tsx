@@ -27,20 +27,25 @@ export default function DetalhesCliente(){
             {cliente.id ?
                 <div>
                     <h1 className="mb-5">{cliente.nome}</h1>
+                    <span>Desde {formatarData(cliente.dataCadastro)}</span>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">Nome social</h2>
                     <p className="mb-2 fs-2">{cliente.nomeSocial}</p>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">CPF</h2>
                     <p className="mb-2 fs-2">{cliente.cpf.valor} - {formatarData(new Date(cliente.cpf.dataEmissao))} </p>
-                    <h2 className="fs-5 mb-0 fw-light fst-italic">Telefones</h2>
-                    <div className="container list-group-flush">
-                        {cliente.telefones.map((tel: Telefone) => {
-                            return (
-                                <div className="list-group-item">
-                                    <p>{formatarTelefone(tel)}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    {cliente.telefones.length > 0 && 
+                        <div>
+                            <h2 className="fs-5 mb-0 fw-light fst-italic">Telefones</h2>
+                            <div className="container list-group-flush">
+                                {cliente.telefones.map((tel: Telefone) => {
+                                    return (
+                                        <div className="list-group-item">
+                                            <p>{formatarTelefone(tel)}</p>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    }
                 </div>
             : <h1>Cliente não disponível</h1>}
         </div>

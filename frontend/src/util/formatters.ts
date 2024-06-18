@@ -4,8 +4,8 @@ function formatarTelefone(telefone: Telefone){
     return `(${telefone.ddd}) ${telefone.numero}`
 }
 
-function formatarData(data: Date){
-    return `${data.getDate()}/${data.getMonth()+1}/${data.getFullYear()}`
+function formatarData(data: Date | undefined){
+    return data ? new Date(data).toLocaleDateString("pt-BR") : ''
 }
 
 export {formatarTelefone, formatarData}
