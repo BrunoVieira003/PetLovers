@@ -89,7 +89,6 @@ export default class ClienteRouter{
             
             res.status(200).send({
                 message: 'Success',
-                data: novoCliente
             })
         })
 
