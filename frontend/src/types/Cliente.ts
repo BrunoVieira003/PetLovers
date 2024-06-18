@@ -10,7 +10,7 @@ type Cliente = {
     cpf: Cpf
     rgs?: Array<Rg>
     dataCadastro?: Date
-    telefones?: Array<Telefone>
+    telefones: Array<Telefone>
     pets?: Array<Pet>
 }
 
