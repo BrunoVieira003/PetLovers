@@ -56,7 +56,56 @@ class ClienteRouter{
                 message: 'Success',
                 data: novoCliente
             })
-    })
+        })
+
+        //update
+        this.router.put('/:clienteId', (req: Request, res: Response) => {
+            const clienteId = parseInt(req.params.clienteId)
+            const {nome, nomeSocial, cpf, rgs, telefones} = req.body
+
+            const clienteIndex = this.clientes.findIndex(cli => cli.id === clienteId)
+            if(clienteIndex < 0){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const novoCliente = {
+                id: clienteId,
+                nome,
+                nomeSocial,
+                cpf: {
+                    valor: cpf.valor,
+                    dataEmissao: new Date(cpf.dataEmissao)
+                },
+                rgs,
+                telefones,
+                dataCadastro: new Date
+            }
+
+            this.clientes.splice(clienteIndex, 1, novoCliente)
+            
+            res.status(200).send({
+                message: 'Success',
+                data: novoCliente
+            })
+        })
+
+        //delete
+        this.router.delete('/:clienteId', (req, res) => {
+            const {clienteId} = req.params
+            const clienteIndex = this.clientes.findIndex(cli => cli.id === parseInt(clienteId))
+            if(clienteIndex < 0){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+            
+            this.clientes.splice(clienteIndex, 1)
+            return res.status(200).send({
+                message: 'Success',
+            })
+        })
     }
 }
 
