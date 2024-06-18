@@ -25,7 +25,7 @@ export default class ClienteRouter{
             if(cliente){
                 return res.status(200).send({
                     message: 'Success',
-                    data: this.clientes
+                    cliente
                 })
             }else{
                 return res.status(404).send({
