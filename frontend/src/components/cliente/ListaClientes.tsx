@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import 'bootstrap/dist/css/bootstrap.css'
-import { Cliente } from "../types/Cliente"
+import { Cliente } from "../../types/Cliente"
 import CadastroCliente from "./CadastroCliente"
 
 function ListaClientes(){

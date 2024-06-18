@@ -1,14 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { Cliente } from "../types/Cliente"
-import { formatarData, formatarTelefone } from "../util/formatters"
-import { Telefone } from "../types/Telefone"
+import { Cliente } from "../../types/Cliente"
+import { formatarData, formatarTelefone } from "../../util/formatters"
+import { Telefone } from "../../types/Telefone"
 import UpdateCliente from "./UpdateCliente"
-import IconButton from "./IconButton"
-import ListaPets from "./ListaPets"
-import VoltarButton from "./VoltarButton"
-import CadastroPet from "./CadastroPet"
+import IconButton from "../IconButton"
+import ListaPets from "../pet/ListaPets"
+import VoltarButton from "../VoltarButton"
+import CadastroPet from "../pet/CadastroPet"
 
 export default function DetalhesCliente(){
     const {clienteId} = useParams()

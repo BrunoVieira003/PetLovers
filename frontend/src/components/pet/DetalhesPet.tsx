@@ -1,9 +1,9 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import IconButton from "./IconButton"
-import { Pet } from "../types/Pet"
-import VoltarButton from "./VoltarButton"
+import IconButton from "../IconButton"
+import { Pet } from "../../types/Pet"
+import VoltarButton from "../VoltarButton"
 import UpdatePet from "./UpdatePet"
 
 export default function DetalhesPet(){

@@ -1,9 +1,9 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import 'bootstrap/dist/css/bootstrap.css'
-import { Cliente } from "../types/Cliente"
-import CadastroCliente from "./CadastroCliente"
-import { Pet } from "../types/Pet"
+import { Cliente } from "../../types/Cliente"
+import CadastroCliente from "../cliente/CadastroCliente"
+import { Pet } from "../../types/Pet"
 import { useParams } from "react-router-dom"
 
 export default function ListaPets(){

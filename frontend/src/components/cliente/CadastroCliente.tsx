@@ -1,23 +1,21 @@
-import Modal from "./Modal"
+import Modal from "../Modal"
 import axios from "axios"
-import TextInput from "./form/TextInput"
-import CpfInput from "./form/CpfInput"
-import { Cliente } from "../types/Cliente"
+import TextInput from "../form/TextInput"
+import CpfInput from "../form/CpfInput"
 
 type propsType = {
-    cliente: Cliente
     afterSubmit?: any
 }
 
-export default function UpdateCliente(props: propsType){
-    const {cliente, afterSubmit} = props
-    
+function CadastroCliente(props: propsType){
+    const {afterSubmit} = props
+
     async function enviar(e: any){
         e.preventDefault()
         const form = e.target
         const formData = new FormData(form)
         try{
-            await axios.put('http://localhost:8000/clientes/'+cliente.id, {
+            await axios.post('http://localhost:8000/clientes', {
             nome: formData.get('nome'),
             nomeSocial: formData.get('nomeSocial'),
             cpf: {
@@ -33,13 +31,16 @@ export default function UpdateCliente(props: propsType){
     }
 
     return (
-        <Modal id="updateCliente" title="Atualizar cliente">
+        <Modal id="cadastroCliente" title="Novo cliente">
             <form onSubmit={enviar} className="d-flex flex-column">
-                <TextInput id="nome" defaultValue={cliente.nome} required label="Nome"/>
-                <TextInput id="nomeSocial" defaultValue={cliente.nomeSocial} required label="Nome social"/>
-                <CpfInput defaultValue={cliente.cpf}/>
+                <h3>Nome</h3>
+                <TextInput label="Nome" id="nome" required/>
+                <TextInput label="Nome social" id="nomeSocial" required/>
+                <CpfInput/>
                 <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
             </form>
         </Modal>
     )
 }
+
+export default CadastroCliente

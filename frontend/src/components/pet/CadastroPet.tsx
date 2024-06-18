@@ -1,6 +1,6 @@
-import Modal from "./Modal"
+import Modal from "../Modal"
 import axios from "axios"
-import TextInput from "./form/TextInput"
+import TextInput from "../form/TextInput"
 import { useParams } from "react-router-dom"
 
 type propsType = {
