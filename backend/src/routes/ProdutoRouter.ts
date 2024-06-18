@@ -1,31 +1,31 @@
 import { Router, Request, Response } from "express";
 import Empresa from "../types/Empresa";
-import { Servico } from "../types/Servico";
+import { Produto } from "../types/Produto";
 
-export default class ServicoRouter{
+export default class ProdutoRouter{
     public router: Router
-    private servicos: Servico[]
+    private produtos: Produto[]
 
     constructor(empresa: Empresa){
         this.router = Router()
-        this.servicos = empresa.getServicos
+        this.produtos = empresa.getProdutos
 
         // getAll
         this.router.get('/', (req, res) => {
             return res.status(200).send({
                 message: 'Success',
-                servicos: this.servicos
+                produtos: this.produtos
             })
         })
 
         //getById
-        this.router.get('/:servicoId', (req, res) => {
-            const {servicoId} = req.params
-            const servico = this.servicos.find(serv => serv.id === parseInt(servicoId))
-            if(servico){
+        this.router.get('/:produtoId', (req, res) => {
+            const {produtoId} = req.params
+            const produto = this.produtos.find(prod => prod.id === parseInt(produtoId))
+            if(produto){
                 return res.status(200).send({
                     message: 'Success',
-                    servico
+                    produto
                 })
             }else{
                 return res.status(404).send({
@@ -37,39 +37,39 @@ export default class ServicoRouter{
         //create
         this.router.post('/', (req: Request, res: Response) => {
             const {nome, preco} = req.body
-            const novoServico = {
-                id: empresa.servicosCounter++,
+            const novoProduto = {
+                id: empresa.produtosCounter++,
                 nome,
                 preco: parseFloat(preco),
             }
 
-            this.servicos.push(novoServico)
+            this.produtos.push(novoProduto)
             
             res.status(200).send({
                 message: 'Success',
-                servico: novoServico
+                produto: novoProduto
             })
         })
 
         //update
-        this.router.put('/:servicoId', (req: Request, res: Response) => {
-            const servicoId = parseInt(req.params.servicoId)
+        this.router.put('/:produtoId', (req: Request, res: Response) => {
+            const produtoId = parseInt(req.params.produtoId)
             const {nome, preco} = req.body
 
-            const servicoIndex = this.servicos.findIndex(serv => serv.id === servicoId)
-            if(servicoIndex < 0){
+            const produtoIndex = this.produtos.findIndex(prod => prod.id === produtoId)
+            if(produtoIndex < 0){
                 return res.status(404).send({
                     message: 'Not found',
                 })
             }
 
-            const novoServico = {
-                id: servicoId,
+            const novoProduto = {
+                id: produtoId,
                 nome,
                 preco: parseFloat(preco)
             }
 
-            this.servicos.splice(servicoIndex, 1, novoServico)
+            this.produtos.splice(produtoIndex, 1, novoProduto)
             
             res.status(200).send({
                 message: 'Success',
@@ -77,16 +77,16 @@ export default class ServicoRouter{
         })
 
         //delete
-        this.router.delete('/:servicoId', (req, res) => {
-            const {servicoId} = req.params
-            const servicoIndex = this.servicos.findIndex(cli => cli.id === parseInt(servicoId))
-            if(servicoIndex < 0){
+        this.router.delete('/:produtoId', (req, res) => {
+            const {produtoId} = req.params
+            const produtoIndex = this.produtos.findIndex(cli => cli.id === parseInt(produtoId))
+            if(produtoIndex < 0){
                 return res.status(404).send({
                     message: 'Not found',
                 })
             }
             
-            this.servicos.splice(servicoIndex, 1)
+            this.produtos.splice(produtoIndex, 1)
             return res.status(200).send({
                 message: 'Success',
             })
