@@ -6,10 +6,11 @@ import { formatarData, formatarTelefone } from "../util/formatters"
 import { Telefone } from "../types/Telefone"
 import UpdateCliente from "./UpdateCliente"
 import IconButton from "./IconButton"
+import ListaPets from "./ListaPets"
 
 export default function DetalhesCliente(){
     const {clienteId} = useParams()
-    const [cliente, setCliente] = useState<Cliente>({nome: '', nomeSocial: '', cpf: {valor: '', dataEmissao: ''}, telefones: [] })
+    const [cliente, setCliente] = useState<Cliente>({nome: '', nomeSocial: '', cpf: {valor: '', dataEmissao: ''}, telefones: [], pets: [] })
     const navigate = useNavigate();
 
     async function getCliente(){
@@ -69,6 +70,7 @@ export default function DetalhesCliente(){
                             </div>
                         </div>
                     }
+                {cliente.pets.length > 0 && <ListaPets/>}
                 </div>
             : <h1>Cliente não disponível</h1>}
             <UpdateCliente cliente={cliente}/>

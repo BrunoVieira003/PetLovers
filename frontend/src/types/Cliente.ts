@@ -11,7 +11,7 @@ type Cliente = {
     rgs?: Array<Rg>
     dataCadastro?: Date
     telefones: Array<Telefone>
-    pets?: Array<Pet>
+    pets: Array<Pet>
 }
 
 export type {Cliente}
