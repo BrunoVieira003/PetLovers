@@ -6,6 +6,8 @@ import 'bootstrap/dist/js/bootstrap.esm'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import ListaClientes from './components/cliente/ListaClientes';
 import DetalhesPet from './components/pet/DetalhesPet';
+import ListaServicos from './components/servico/ListaServicos';
+import DetalhesServico from './components/servico/DetalhesServico';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path ="/clientes/:clienteId" element={<DetalhesCliente />} />
         <Route path ="/clientes" element={<ListaClientes />} />
         <Route path ="/clientes/:clienteId/pets/:petId" element={<DetalhesPet />} />
+        <Route path ="/servicos" element={<ListaServicos />} />
+        <Route path ="/servicos/:servicoId" element={<DetalhesServico />} />
       </Routes>
     </>
   );

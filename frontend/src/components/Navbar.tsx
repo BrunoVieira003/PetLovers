@@ -9,6 +9,7 @@ export default function Navbar(){
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <a className="nav-link" aria-current="page" href="/clientes">Clientes</a>
+                        <a className="nav-link" aria-current="page" href="/servicos">Serviços</a>
                     </div>
                 </div>
             </div>
