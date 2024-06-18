@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import IconButton from "./IconButton"
 import { Pet } from "../types/Pet"
+import VoltarButton from "./VoltarButton"
 
 export default function DetalhesPet(){
     const {clienteId, petId} = useParams()
@@ -33,6 +34,7 @@ export default function DetalhesPet(){
 
     return (
         <div className="d-flex flex-column align-items-around container">
+            <VoltarButton/>
             {pet.id &&
                 <div>
                     <h1 className="mb-1">{pet.nome}</h1>

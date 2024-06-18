@@ -7,6 +7,7 @@ import { Telefone } from "../types/Telefone"
 import UpdateCliente from "./UpdateCliente"
 import IconButton from "./IconButton"
 import ListaPets from "./ListaPets"
+import VoltarButton from "./VoltarButton"
 
 export default function DetalhesCliente(){
     const {clienteId} = useParams()
@@ -37,6 +38,7 @@ export default function DetalhesCliente(){
 
     return (
         <div className="d-flex flex-column align-items-around container">
+            <VoltarButton/>
             {cliente.id ?
                 <div>
                     <h1 className="mb-1">{cliente.nome}</h1>
