@@ -35,7 +35,7 @@ export default function DetalhesPet(){
 
     return (
         <div className="d-flex flex-column align-items-around container">
-            <VoltarButton/>
+            <VoltarButton link={`/clientes/${clienteId}`}/>
             {pet.id &&
                 <div>
                     <h1 className="mb-1">{pet.nome}</h1>

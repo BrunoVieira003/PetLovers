@@ -1,8 +1,6 @@
 import Modal from "../Modal"
 import axios from "axios"
 import TextInput from "../form/TextInput"
-import CpfInput from "../form/CpfInput"
-import { Cliente } from "../../types/Cliente"
 import { Pet } from "../../types/Pet"
 import { useParams } from "react-router-dom"
 

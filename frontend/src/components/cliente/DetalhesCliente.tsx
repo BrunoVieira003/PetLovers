@@ -39,7 +39,7 @@ export default function DetalhesCliente(){
 
     return (
         <div className="d-flex flex-column align-items-around container">
-            <VoltarButton/>
+            <VoltarButton link="/clientes"/>
             {cliente.id ?
                 <div>
                     <h1 className="mb-1">{cliente.nome}</h1>
