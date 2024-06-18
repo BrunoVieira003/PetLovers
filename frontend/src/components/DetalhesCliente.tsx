@@ -20,7 +20,7 @@ export default function DetalhesCliente(){
 
     useEffect(() => {
         getCliente()
-    }, [])
+    })
 
     return (
         <div className="d-flex flex-column align-items-around container">
