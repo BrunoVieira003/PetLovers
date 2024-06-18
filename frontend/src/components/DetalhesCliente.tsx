@@ -8,6 +8,7 @@ import UpdateCliente from "./UpdateCliente"
 import IconButton from "./IconButton"
 import ListaPets from "./ListaPets"
 import VoltarButton from "./VoltarButton"
+import CadastroPet from "./CadastroPet"
 
 export default function DetalhesCliente(){
     const {clienteId} = useParams()
@@ -43,7 +44,11 @@ export default function DetalhesCliente(){
                 <div>
                     <h1 className="mb-1">{cliente.nome}</h1>
                     <p className="fst-italic">Desde {formatarData(cliente.dataCadastro)}</p>
+                    <CadastroPet/>
                     <div className="d-flex align-items-center mb-5 gap-3">
+                        <button type="button" className="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#cadastroPet">
+                            <i className="bi-plus-circle-fill">Novo pet</i>
+                        </button>
                         <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateCliente">
                             <i className="bi-pencil-square">Editar</i>
                         </button>

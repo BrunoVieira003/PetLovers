@@ -1,13 +1,14 @@
 import Modal from "./Modal"
 import axios from "axios"
 import TextInput from "./form/TextInput"
-import CpfInput from "./form/CpfInput"
+import { useParams } from "react-router-dom"
 
 type propsType = {
     afterSubmit?: any
 }
 
-function CadastroCliente(props: propsType){
+export default function CadastroPet(props: propsType){
+    const {clienteId} = useParams()
     const {afterSubmit} = props
 
     async function enviar(e: any){
@@ -15,13 +16,11 @@ function CadastroCliente(props: propsType){
         const form = e.target
         const formData = new FormData(form)
         try{
-            await axios.post('http://localhost:8000/clientes', {
+            await axios.post(`http://localhost:8000/clientes/${clienteId}/pets`, {
             nome: formData.get('nome'),
-            nomeSocial: formData.get('nomeSocial'),
-            cpf: {
-                valor: formData.get('cpfValor'),
-                dataEmissao: formData.get('cpfDataEmissao')
-            },
+            tipo: formData.get('tipo'),
+            raca: formData.get('raca'),
+            genero: formData.get('genero'),
         })
         }catch(error){
             console.log(error)
@@ -31,16 +30,14 @@ function CadastroCliente(props: propsType){
     }
 
     return (
-        <Modal id="cadastroCliente" title="Novo cliente">
+        <Modal id="cadastroPet" title="Novo pet">
             <form onSubmit={enviar} className="d-flex flex-column">
-                <h3>Nome</h3>
                 <TextInput label="Nome" id="nome" required/>
-                <TextInput label="Nome social" id="nomeSocial" required/>
-                <CpfInput/>
+                <TextInput label="Tipo" id="tipo" required/>
+                <TextInput label="Raça" id="raca" required/>
+                <TextInput label="Gênero" id="genero" required/>
                 <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
             </form>
         </Modal>
     )
 }
-
-export default CadastroCliente
