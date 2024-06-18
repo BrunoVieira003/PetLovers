@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import 'bootstrap/dist/css/bootstrap.css'
 import { Servico } from "../../types/Servico"
+import CadastroServico from "./CadastroServico"
 
 export default function ListaServicos(){
     const [servicos, setServicos] = useState<Servico[]>([])
@@ -22,6 +23,9 @@ export default function ListaServicos(){
     return (
         <div className="d-flex flex-column align-items-around container gap-3 mt-5">
             <h1 className="mb-3">Serviços</h1>
+            <button type="button" className="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#cadastroServico">
+                Novo serviço
+            </button>
             <div>
                 {servicos.length > 0 && servicos.map(serv => {
                     return (
@@ -32,6 +36,7 @@ export default function ListaServicos(){
                     )
                 })}
             </div>
+            <CadastroServico afterSubmit={getServicos}/>
         </div>
     )
 }
