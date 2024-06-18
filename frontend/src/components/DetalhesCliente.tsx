@@ -26,8 +26,8 @@ export default function DetalhesCliente(){
         <div className="d-flex flex-column align-items-around container">
             {cliente.id ?
                 <div>
-                    <h1 className="mb-5">{cliente.nome}</h1>
-                    <span>Desde {formatarData(cliente.dataCadastro)}</span>
+                    <h1 className="mb-1">{cliente.nome}</h1>
+                    <p className="mb-5 fst-italic">Desde {formatarData(cliente.dataCadastro)}</p>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">Nome social</h2>
                     <p className="mb-2 fs-2">{cliente.nomeSocial}</p>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">CPF</h2>

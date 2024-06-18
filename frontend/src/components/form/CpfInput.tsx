@@ -18,11 +18,15 @@ export default function CpfInput(props: propsType){
     }, [valor, dataEmissao, setState])
 
     return (
-        <div className="form-floating mb-3">
-            <input type="text" className="form-control" id="valor" placeholder="" name="valor" required={required} value={valor} onChange={(e) => {setValor(e.target.value)}}/>
-            <label htmlFor="valor">Valor</label>
-            <input type="date" className="form-control" id="dataEmissao" placeholder="" name="dataEmissao" required={required} value={dataEmissao} onChange={(e) => {setDataEmissao(e.target.value)}}/>
-            <label htmlFor="dataEmissao">Valor</label>
+        <div className="input-group">
+            <div className="form-floating mb-3">
+                <input type="text" className="form-control" id="valor" placeholder="" name="valor" required={required} value={valor} onChange={(e) => {setValor(e.target.value)}}/>
+                <label htmlFor="valor">CPF</label>
+            </div>
+            <div className="form-floating mb-3">
+                <input type="date" className="form-control" id="dataEmissao" placeholder="" name="dataEmissao" required={required} value={dataEmissao} onChange={(e) => {setDataEmissao(e.target.value)}}/>
+                <label htmlFor="dataEmissao">Data de emissão</label>
+            </div>
         </div>
-    )
+        )
 }

@@ -41,6 +41,7 @@ function CadastroCliente(props: propsType){
     return (
         <Modal id="cadastroCliente" title="Novo cliente">
             <form onSubmit={enviar} className="d-flex flex-column">
+                <h3>Nome</h3>
                 <TextInput state={[nome, setNome]} label="Nome" id="nome" required/>
                 <TextInput state={[nomeSocial, setNomeSocial]} label="Nome social" id="nomeSocial" required/>
                 <CpfInput state={[cpf, setCpf]} />
