@@ -23,17 +23,15 @@ export default function DetalhesCliente(){
     }, [])
 
     return (
-        <div className="d-flex flex-column container">
+        <div className="d-flex flex-column align-items-around container">
             {cliente.id ?
-                <>
-                    <h2>Nome</h2>
-                    <p className="fst-italic my-1">{cliente.nome}</p>
-                    <h2>Nome social</h2>
-                    <p className="fst-italic my-1">{cliente.nomeSocial}</p>
-                    <h2>CPF</h2>
-                    <p>{cliente.cpf.valor}</p>
-                    <p>{formatarData(new Date(cliente.cpf.dataEmissao))}</p>
-                    <h2>Telefones</h2>
+                <div>
+                    <h1 className="mb-5">{cliente.nome}</h1>
+                    <h2 className="fs-5 mb-0 fw-light fst-italic">Nome social</h2>
+                    <p className="mb-2 fs-2">{cliente.nomeSocial}</p>
+                    <h2 className="fs-5 mb-0 fw-light fst-italic">CPF</h2>
+                    <p className="mb-2 fs-2">{cliente.cpf.valor} - {formatarData(new Date(cliente.cpf.dataEmissao))} </p>
+                    <h2 className="fs-5 mb-0 fw-light fst-italic">Telefones</h2>
                     <div className="container list-group-flush">
                         {cliente.telefones.map((tel: Telefone) => {
                             return (
@@ -43,7 +41,7 @@ export default function DetalhesCliente(){
                             )
                         })}
                     </div>
-                </>
+                </div>
             : <h1>Cliente não disponível</h1>}
         </div>
     )
