@@ -2,6 +2,7 @@ import { Cliente } from "./Cliente"
 
 export default class Empresa{
     public clientesCounter = 1
+    public petsCounter = 1
     private clientes: Array<Cliente>
 
     constructor(){

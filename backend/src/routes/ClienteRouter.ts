@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import Empresa from "../types/Empresa";
 import { Cliente } from "../types/Cliente";
 
-class ClienteRouter{
+export default class ClienteRouter{
     public router: Router
     private clientes: Cliente[]
 
@@ -110,7 +110,3 @@ class ClienteRouter{
         })
     }
 }
-
-
-
-export default ClienteRouter
