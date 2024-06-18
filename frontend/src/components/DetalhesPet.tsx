@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import IconButton from "./IconButton"
 import { Pet } from "../types/Pet"
 import VoltarButton from "./VoltarButton"
+import UpdatePet from "./UpdatePet"
 
 export default function DetalhesPet(){
     const {clienteId, petId} = useParams()
@@ -39,7 +40,7 @@ export default function DetalhesPet(){
                 <div>
                     <h1 className="mb-1">{pet.nome}</h1>
                     <div className="d-flex align-items-center mb-5 gap-3">
-                        <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateCliente">
+                        <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updatePet">
                             <i className="bi-pencil-square">Editar</i>
                         </button>
                         <IconButton 
@@ -56,6 +57,7 @@ export default function DetalhesPet(){
                     <p className="mb-2 fs-2">{pet.genero}</p>
                 </div>
             }
+            <UpdatePet pet={pet}/>
         </div>
     )
 }
