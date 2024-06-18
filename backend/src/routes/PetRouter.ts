@@ -80,5 +80,67 @@ export default class PetRouter{
             
         })
 
+        // update
+        this.router.put('/:clienteId/pets/:petId', (req, res) => {
+            const clienteId = parseInt(req.params.clienteId)
+            const petId = parseInt(req.params.petId)
+            
+            const {nome, tipo, raca, genero} = req.body
+            const cliente = this.clientes.find(cli => cli.id === clienteId)
+            if(!cliente){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const petIndex = cliente.pets.findIndex(p => p.id === petId)
+            if(petIndex < 0){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const novoPet = {
+                id: petId,
+                nome,
+                tipo,
+                raca,
+                genero
+            }
+
+            cliente.pets.splice(petIndex, 1, novoPet)
+            
+            return res.status(200).send({
+                message: 'Success',
+                data: novoPet
+            })  
+        })
+
+        // delete
+        this.router.delete('/:clienteId/pets/:petId', (req, res) => {
+            const clienteId = parseInt(req.params.clienteId)
+            const petId = parseInt(req.params.petId)
+
+            const cliente = this.clientes.find(cli => cli.id === clienteId)
+            if(!cliente){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const petIndex = cliente.pets.findIndex(pet => pet.id === petId)
+            if(petIndex < 0){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            cliente.pets.splice(petIndex, 1)
+
+            return res.status(200).send({
+                message: 'Success',
+            })
+        })
+
     }
 }
