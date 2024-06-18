@@ -9,7 +9,7 @@ type propsType = {
     afterSubmit?: any
 }
 
-export default function UpdateCliente(props: propsType){
+export default function UpdatePet(props: propsType){
     const {clienteId} = useParams()
     const {pet, afterSubmit} = props
     

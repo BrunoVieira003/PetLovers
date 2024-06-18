@@ -2,7 +2,7 @@ type propsType = {
     id?: string
     label?: string
     required?: boolean,
-    defaultValue?: string
+    defaultValue?: number
 }
 
 export default function NumberInput(props: propsType){

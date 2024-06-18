@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import IconButton from "../IconButton"
 import VoltarButton from "../VoltarButton"
 import { Servico } from "../../types/Servico"
+import UpdateServico from "./UpdateServico"
 
 export default function DetalhesServico(){
     const {servicoId} = useParams()
@@ -39,7 +40,7 @@ export default function DetalhesServico(){
                 <div>
                     <h1 className="mb-1">{servico.nome}</h1>
                     <div className="d-flex align-items-center mb-5 gap-3">
-                        <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updatePet">
+                        <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateServico">
                             <i className="bi-pencil-square">Editar</i>
                         </button>
                         <IconButton 
@@ -52,6 +53,7 @@ export default function DetalhesServico(){
                     <p className="mb-2 fs-2">{servico.preco}</p>
                 </div>
             }
+            <UpdateServico servico={servico}/>
         </div>
     )
 }
