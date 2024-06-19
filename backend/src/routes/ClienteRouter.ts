@@ -124,21 +124,21 @@ export default class ClienteRouter{
             const clienteIndex = this.clientes.findIndex(cli => cli.id === clienteId)
             if(clienteIndex < 0){
                 return res.status(404).send({
-                    message: 'Not found',
+                    message: 'cliente Not found',
                 })
             }
 
-            const consumido = this.produtos.find(prod => prod.id === consumidoId)
+            const consumido = this.produtos.find(prod => prod.id === parseInt(consumidoId))
             if(!consumido){
                 return res.status(404).send({
-                    message: 'Not found',
+                    message: 'produto Not found',
                 })
             }
 
-            const pet = this.clientes[clienteIndex].pets.find(prod => prod.id === petId)
+            const pet = this.clientes[clienteIndex].pets.find(prod => prod.id === parseInt(petId))
             if(!pet){
                 return res.status(404).send({
-                    message: 'Not found',
+                    message: 'pet Not found',
                 })
             }
 
@@ -146,7 +146,7 @@ export default class ClienteRouter{
             novoCliente.consumidos.push({ pet, consumido })
             this.clientes.splice(clienteIndex, 1, novoCliente)
 
-            return res.status(404).send({
+            return res.status(200).send({
                 message: 'Success',
             })
 

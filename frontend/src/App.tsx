@@ -8,8 +8,8 @@ import ListaClientes from './components/cliente/ListaClientes';
 import DetalhesPet from './components/pet/DetalhesPet';
 import ListaServicos from './components/servico/ListaServicos';
 import DetalhesServico from './components/servico/DetalhesServico';
-import ListaProdutos from './components/servico copy/ListaProdutos';
-import DetalhesProduto from './components/servico copy/DetalhesProduto';
+import ListaProdutos from './components/produto/ListaProdutos';
+import DetalhesProduto from './components/produto/DetalhesProduto';
 
 function App() {
   return (
