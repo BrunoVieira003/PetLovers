@@ -165,14 +165,14 @@ export default class ClienteRouter{
                 })
             }
 
-            const consumido = this.servicos.find(serv => serv.id === consumidoId)
+            const consumido = this.servicos.find(serv => serv.id === parseInt(consumidoId))
             if(!consumido){
                 return res.status(404).send({
                     message: 'Not found',
                 })
             }
 
-            const pet = this.clientes[clienteIndex].pets.find(prod => prod.id === petId)
+            const pet = this.clientes[clienteIndex].pets.find(prod => prod.id === parseInt(petId))
             if(!pet){
                 return res.status(404).send({
                     message: 'Not found',
