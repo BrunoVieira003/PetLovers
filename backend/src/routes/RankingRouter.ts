@@ -16,6 +16,23 @@ export default class ProdutoRouter{
         this.produtos = empresa.getProdutos
         this.servicos = empresa.getServicos
 
-        this.router.get('/')
+        this.router.get('/maisConsumiram', (req, res) => {
+            const rank: Array<{total: number ,cliente: Cliente}> = []
+            this.clientes.forEach(cli => {
+                rank.push({
+                    total: cli.consumidos.length,
+                    cliente: cli
+                })
+            })
+
+            rank.sort((cliA, cliB) => {
+                return cliB.total - cliA.total
+            })
+
+            return res.status(200).send({
+                message: 'Success',
+                rank
+            })
+        })
     }
 }
