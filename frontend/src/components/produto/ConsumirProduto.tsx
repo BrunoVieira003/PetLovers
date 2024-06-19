@@ -48,10 +48,10 @@ export default function ConsumirProduto(props: propsType){
     return (
         <Modal id="consumirProduto" title="Consumir produto">
             <form onSubmit={enviar} className="d-flex flex-column">
-                <select id="consumido" name="consumido">
+                <select className="form-select mb-3" id="consumido" name="consumido">
                     {produtos.length}
                     {produtos.map(prod => {
-                        return (<option value={prod.id}>{prod.nome}</option>)
+                        return (<option value={prod.id}>{prod.nome} - R${prod.preco}</option>)
                     })}
                 </select>
                 <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Enviar</button>

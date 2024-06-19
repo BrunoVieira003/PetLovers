@@ -51,7 +51,7 @@ export default function DetalhesProduto(){
                         />
                     </div>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">Preço</h2>
-                    <p className="mb-2 fs-2">{produto.preco}</p>
+                    <p className="mb-2 fs-2">R$ {produto.preco}</p>
                 </div>
             }
             <UpdateProduto produto={produto}/>

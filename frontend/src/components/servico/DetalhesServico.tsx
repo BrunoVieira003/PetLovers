@@ -50,7 +50,7 @@ export default function DetalhesServico(){
                         />
                     </div>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">Preço</h2>
-                    <p className="mb-2 fs-2">{servico.preco}</p>
+                    <p className="mb-2 fs-2">R$ {servico.preco}</p>
                 </div>
             }
             <UpdateServico servico={servico}/>

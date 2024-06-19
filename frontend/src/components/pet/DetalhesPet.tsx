@@ -6,6 +6,7 @@ import { Pet } from "../../types/Pet"
 import VoltarButton from "../VoltarButton"
 import UpdatePet from "./UpdatePet"
 import ConsumirServico from "../servico/ConsumirServico"
+import ConsumirProduto from "../produto/ConsumirProduto"
 
 export default function DetalhesPet(){
     const {clienteId, petId} = useParams()
@@ -56,15 +57,18 @@ export default function DetalhesPet(){
                     <p className="mb-2 fs-2">{pet.raca}</p>
                     <h2 className="fs-5 mb-0 fw-light fst-italic">Gênero</h2>
                     <p className="mb-2 fs-2">{pet.genero}</p>
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consumirProduto">
-                        Comprar produto
-                    </button>
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consumirServico">
-                        Comprar serviço
-                    </button>
+                    <div className="d-flex gap-3">
+                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consumirProduto">
+                            Comprar produto
+                        </button>
+                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consumirServico">
+                            Comprar serviço
+                        </button>
+                    </div>
                 </div>
             }
             <UpdatePet pet={pet}/>
+            <ConsumirProduto/>
             <ConsumirServico/>
         </div>
     )
