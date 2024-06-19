@@ -1,14 +1,20 @@
 import { Router, Request, Response } from "express";
 import Empresa from "../types/Empresa";
 import { Cliente } from "../types/Cliente";
+import { Produto } from "../types/Produto";
+import { Servico } from "../types/Servico";
 
 export default class ClienteRouter{
     public router: Router
     private clientes: Cliente[]
+    private produtos: Produto[]
+    private servicos: Servico[]
 
     constructor(empresa: Empresa){
         this.router = Router()
         this.clientes = empresa.getClientes
+        this.produtos = empresa.getProdutos
+        this.servicos = empresa.getServicos
 
         // getAll
         this.router.get('/', (req, res) => {
@@ -48,6 +54,7 @@ export default class ClienteRouter{
                 pets: [],
                 rgs: [],
                 telefones: [],
+                consumidos: [],
                 dataCadastro: new Date
             }
 
@@ -82,6 +89,7 @@ export default class ClienteRouter{
                 pets: this.clientes[clienteIndex].pets,
                 rgs: [],
                 telefones: [],
+                consumidos: this.clientes[clienteId].consumidos,
                 dataCadastro: new Date
             }
 
@@ -106,6 +114,80 @@ export default class ClienteRouter{
             return res.status(200).send({
                 message: 'Success',
             })
+        })
+
+        // registrar consumo produto
+        this.router.post('/:clienteId/consumirProduto', (req, res) => {
+            const clienteId = parseInt(req.params.clienteId)
+            const { consumidoId, petId } = req.body
+
+            const clienteIndex = this.clientes.findIndex(cli => cli.id === clienteId)
+            if(clienteIndex < 0){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const consumido = this.produtos.find(prod => prod.id === consumidoId)
+            if(!consumido){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const pet = this.clientes[clienteIndex].pets.find(prod => prod.id === petId)
+            if(!pet){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const novoCliente = this.clientes[clienteIndex]
+            novoCliente.consumidos.push({ pet, consumido })
+            this.clientes.splice(clienteIndex, 1, novoCliente)
+
+            return res.status(404).send({
+                message: 'Success',
+            })
+
+
+        })
+
+        // registrar consumo servico
+        this.router.post('/:clienteId/consumirServico', (req, res) => {
+            const clienteId = parseInt(req.params.clienteId)
+            const { consumidoId, petId } = req.body
+
+            const clienteIndex = this.clientes.findIndex(cli => cli.id === clienteId)
+            if(clienteIndex < 0){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const consumido = this.servicos.find(serv => serv.id === consumidoId)
+            if(!consumido){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const pet = this.clientes[clienteIndex].pets.find(prod => prod.id === petId)
+            if(!pet){
+                return res.status(404).send({
+                    message: 'Not found',
+                })
+            }
+
+            const novoCliente = this.clientes[clienteIndex]
+            novoCliente.consumidos.push({ pet, consumido })
+            this.clientes.splice(clienteIndex, 1, novoCliente)
+
+            return res.status(404).send({
+                message: 'Success',
+            })
+
+
         })
     }
 }

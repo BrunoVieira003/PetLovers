@@ -1,3 +1,4 @@
+import { Compra } from "./Compra"
 import { Cpf } from "./Cpf"
 import { Pet } from "./Pet"
 import { Rg } from "./Rg"
@@ -12,6 +13,7 @@ type Cliente = {
     dataCadastro: Date
     telefones: Array<Telefone>
     pets: Array<Pet>
+    consumidos: Array<Compra>
 }
 
 export type {Cliente}
