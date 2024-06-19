@@ -10,6 +10,7 @@ import ListaServicos from './components/servico/ListaServicos';
 import DetalhesServico from './components/servico/DetalhesServico';
 import ListaProdutos from './components/produto/ListaProdutos';
 import DetalhesProduto from './components/produto/DetalhesProduto';
+import RankingMaisConsumiram from './components/RankingMaisConsumiram';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path ="/servicos/:servicoId" element={<DetalhesServico />} />
         <Route path ="/produtos" element={<ListaProdutos />} />
         <Route path ="/produtos/:produtoId" element={<DetalhesProduto />} />
+        <Route path ="/" element={<RankingMaisConsumiram />} />
+        <Route path ="/ranking" element={<RankingMaisConsumiram />} />
       </Routes>
     </>
   );
