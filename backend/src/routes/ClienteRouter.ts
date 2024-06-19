@@ -189,5 +189,17 @@ export default class ClienteRouter{
 
 
         })
+
+        this.router.get('/consumo', (req, res) => {
+            let consumo = []
+            this.clientes.forEach(cli => {
+                consumo = [...consumo, ...cli.consumidos]
+            })
+
+            return res.status(200).send({
+                message: 'Success',
+                consumo
+            })
+        })
     }
 }
