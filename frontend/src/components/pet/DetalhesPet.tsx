@@ -5,7 +5,7 @@ import IconButton from "../IconButton"
 import { Pet } from "../../types/Pet"
 import VoltarButton from "../VoltarButton"
 import UpdatePet from "./UpdatePet"
-import ConsumirProduto from "../produto/ConsumirProduto"
+import ConsumirServico from "../servico/ConsumirServico"
 
 export default function DetalhesPet(){
     const {clienteId, petId} = useParams()
@@ -59,10 +59,13 @@ export default function DetalhesPet(){
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consumirProduto">
                         Comprar produto
                     </button>
+                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#consumirServico">
+                        Comprar serviço
+                    </button>
                 </div>
             }
             <UpdatePet pet={pet}/>
-            <ConsumirProduto/>
+            <ConsumirServico/>
         </div>
     )
 }
